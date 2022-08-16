@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-            token: null,
+            token: '',
             user: {},
         }
     },
@@ -18,11 +18,12 @@ export default {
         if (localStorage.token) {
             this.token = localStorage.token;
             this.get_user();
+            console.log(this.token)
         } else{
             this.$router.push({
                 name: "Login",
                 params: {
-                    message:
+                    message: "No estas autorizado para acceder con esta cuenta"
                 }
             })
         }
@@ -36,6 +37,8 @@ export default {
                     headers: { Authorization: `Bearer ${this.token}` },
                 });
                 this.user = rs.data.user;
+
+
 
             }
 

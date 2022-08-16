@@ -3,6 +3,7 @@ import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
 import Account from "./components/Account.vue";
 import Home from "./components/Home.vue";
+import ForgotPassword from "./components/ForgotPassword.vue";
 
 
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
         name: "Account",
         component: Account,
     },
+    {
+        path: "/forgot-password",
+        name: "ForgotPassword",
+        component: ForgotPassword,
+    }
 ];
 
 const _router = createRouter({
