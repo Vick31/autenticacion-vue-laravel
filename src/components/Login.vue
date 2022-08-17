@@ -70,10 +70,6 @@ export default {
                 if (e.response.data.message)
                     this.errors = e.response.data.message;
 
-
-                console.log(e);
-                this.errors = e.response.data.errors;
-
             }
 
         },

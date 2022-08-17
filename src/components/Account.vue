@@ -18,8 +18,7 @@ export default {
         if (localStorage.token) {
             this.token = localStorage.token;
             this.get_user();
-            console.log(this.token)
-        } else{
+        } else {
             this.$router.push({
                 name: "Login",
                 params: {
@@ -37,9 +36,6 @@ export default {
                     headers: { Authorization: `Bearer ${this.token}` },
                 });
                 this.user = rs.data.user;
-
-
-
             }
 
             catch (e) {
@@ -61,15 +57,21 @@ export default {
 
                 localStorage.clear();
 
-                this.$router.push ({
+                this.$router.push({
 
-                        name: "Login",
-                        params: {
-                            message: rs.data.message,
-                        },
+                    name: "Login",
+                    params: {
+                        message: rs.data.message,
+                    },
                 });
             } catch (e) {
                 // console.log(e)
+                this.$router.push({
+                    name: "Login",
+                    params: {
+                        message: e.response.data.message,
+                    },
+                });
             }
         }
     },

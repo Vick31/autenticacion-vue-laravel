@@ -3,7 +3,7 @@
     <form action=""
          style="display: flex; flex-direction: column; align-items: center; font-family:Arial, Helvetica, sans-serif;">
         <h2>
-            Confirmacion de correo
+            Recuperar contraseña
         </h2>
         <input type="text" name="email" v-model="email" placeholder="Correo electronico"
             style="padding: 0.5em; font-size:18px; margin: 0.3em;">
@@ -12,7 +12,7 @@
 
         <button type="button"
             @click="send_email()"
-            style="font-size:16px; background-color: blue; color: white; border-radius: 10px; border: none; padding: 0.5em;">
+            style="font-size:16px; background-color: blue; color: white; border-radius: 10px; border: none; padding: 0.5em; ">
 
             Confirmar
 
@@ -40,13 +40,11 @@ export default {
             try {
                 
                 const rs = await this.axios.post("/api/forgot-password", {email: this.email});
-                console.log('correcto')
                 this.$router.push({
                     name: 'Login',
                     params: { message: rs.data.message, },
                     
                 });
-                console.log('correcto')
             }
             catch (e) {
 
