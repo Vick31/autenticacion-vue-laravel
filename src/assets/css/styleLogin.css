@@ -1,4 +1,4 @@
-div {
+#body-login div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,16 +12,18 @@ div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #F8F9F9;
 }
 
-div #form-login {
+#body-login div #form-login {
   width: 30em;
   padding: 2em;
   border: 1px solid #000;
   border-radius: 10px;
+  background-color: #fff;
 }
 
-div #form-login div input {
-  width: 100%;
+#body-login div #form-login div .form-control {
+  background-color: #fff;
 }
 /*# sourceMappingURL=styleLogin.css.map */
