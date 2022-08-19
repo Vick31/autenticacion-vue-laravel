@@ -1,5 +1,5 @@
 <style scoped>
-@import "../assets/css/styleRegister.css";  
+@import "../assets/Css/styleRegister.css";  
 </style>
 
 <template>
