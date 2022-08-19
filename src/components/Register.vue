@@ -1,3 +1,7 @@
+<style scoped>
+@import "../assets/css/styleRegister.css";  
+</style>
+
 <template>
 
     <h1> registrarse </h1>
@@ -37,7 +41,6 @@
 
 
 </template>
-
 
 <script>
 
