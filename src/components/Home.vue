@@ -1,5 +1,3 @@
 <template>
-    <h1>
-        BIENVENIDOS
-    </h1>
+    <h1>Bienvenidos</h1>
 </template>

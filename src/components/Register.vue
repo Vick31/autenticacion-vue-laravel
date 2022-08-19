@@ -1,91 +1,97 @@
-<style scoped>
-@import "../assets/Css/styleRegister.css";  
-</style>
-
 <template>
+  <h1>Registrar</h1>
+  <br />
+   <form>
+      <div class="form-floating pb-3">
+        <input
+          type="name"
+          class="form-control"
+          name="name"
+          v-model="form.name"
+        />
+        <label for="floatingInput">Nombre</label>
+        <span v-if="errors.name">{{ errors.name[0] }}</span>
+      </div>
+    <div class="form-floating pb-3">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        name="email"
+        v-model="form.email"
+      />
+      <label for="floatingInput">Correo electronico</label>
+      <span v-if="errors.email">{{ errors.email[0] }}</span>
+    </div>
+    <div class="mb-3">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="contraseña"
+        name="password"
+        v-model="form.password"
+      />
+      <span v-if="errors.password">{{ errors.password[0] }} </span>
+    </div>
+    <div class="mb-3">
 
-    <h1> registrarse </h1>
-
-    <form>
-        <div>
-            <input type="text" name="name" v-model="form.name" placeholder="Nombre" />
-            <span v-if="errors.name">{{ errors.name[0] }}</span>
-        </div>
-        <br>
-        <div>
-            <input type="text" name="email" v-model="form.email" placeholder="Correo electronico" />
-            <span v-if="errors.email">{{ errors.email[0] }}</span>
-        </div>
-        <br>
-        <div>
-            <input type="password" name="password" v-model="form.password"
-                placeholder="Contraseña" />
-            <span v-if="errors.password">{{ errors.password[0] }}</span>
-        </div>
-        <br>
-        <div>
-            <input type="password" name="password_confirmation" v-model="form.password_confirmation"
-                placeholder="Confirmar Contraseña" />
-            <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}</span>
-        </div>
-        <br>
-
-        <div>
-            <button @click="register_user()" type="button">Guardar</button>
-        </div>
-        <br>
-        <p v-if="message">
-            {{ message }}
-        </p>
-    </form>
-
-
+      <input
+        type="password"
+        class="form-control"
+        placeholder="confirmar contraseña"
+        name=" password_confirmation"
+        v-model="form.password_confirmation"
+      />
+      <span v-if="errors.password_confirmation"
+        >{{ errors.password_confirmation[0] }}
+      </span>
+    </div>
+    <button type="button" @click="register" class="btn btn-primary">
+      Registrase
+    </button>
+    <br />
+    <p v-if="message">{{ message }}</p>
+  </form>
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-            message: '',
-            form: {
-                name: "",
-                email: "",
-                password: "",
-                password_confirmation: "",
-            },
-            errors: {},
-        };
+  data() {
+    return {
+      message: null,
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      },
+      errors: {},
+    };
+  },
+  mounted() {
+    if (this.$route.params.message) this.message = this.$route.params.message;
+  },
+
+  methods: {
+    async register() {
+      try {
+        const rs = await this.axios.post("/api/register", this.form);
+        this.$router.push({
+          name: "login",
+          // params: {
+          //     // token: rs.data.token,
+          // },
+        });
+        localStorage.token = rs.data.token;
+      } catch (e) {
+        this.errors = {};
+        this.message = null;
+
+        if (e.response.data.errors) this.errors = e.response.data.errors;
+        else if (e.response.data.message)
+          this.message = e.response.data.message;
+      }
     },
-    mounted() {
-    },
-
-    methods: {
-        async register_user() {
-            try {
-                const rs = await this.axios.post("/api/register", this.form);
-
-                this.$router.push({
-                    name: 'Login',
-                    params: { message: rs.data.message, },
-
-                });
-            }
-            catch (e) {
-
-                this.errors = {},
-                    this.message = null;
-
-                if (e.response.data.errors)
-                    this.errors = e.response.data.errors;
-
-                if (e.response.data.message)
-                    this.errors = e.response.data.message;
-                    
-                console.log(e)
-            }
-
-        },
-    },
+  },
 };
 </script>
