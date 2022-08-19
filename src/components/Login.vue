@@ -30,6 +30,11 @@
     </div>
 </template>
 
+
+<style scoped>
+    @import "../assets/css/styleLogin.css";
+</style>
+
 <script>
 
 export default {
