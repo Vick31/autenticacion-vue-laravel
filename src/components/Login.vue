@@ -1,19 +1,24 @@
 <template>
-  <h1>Iniciar sesion</h1>
-  <br>
+
   <div>
-    <form id="te">
+    <h1>Iniciar sesion</h1>
+    <form id="form-login">
       <div class="form-floating pb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
           v-model="form.email" />
         <label for="floatingInput">Correo electronico</label>
         <span class="errors-message" v-if="errors.email">{{ errors.email[0] }}</span>
       </div>
+
       <div class="mb-3">
-        <input type="password" class="form-control" id="floatingInput" placeholder="contraseña" name="password"
-          v-model="form.password" />
-        <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
+        <div class="form-floating pb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="contraseña" name="password"
+            v-model="form.password" />
+          <label for="floatingPassword">Password</label>
+          <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
+        </div>
       </div>
+
       <button type="button" @click="login()" class="btn btn-primary">
         Reenviar correo
       </button>
@@ -28,24 +33,7 @@
 </template>
 
 <style scoped>
-html,
-body {
-  height: 100%;
-}
-
-.errors-message {
-  color: red;
-  margin: 0.5rem 0 0.5rem 0;
-  text-align: center;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: aliceblue;
-}
+@import "../assets/css/styleLogin.css";
 </style>
 
 
