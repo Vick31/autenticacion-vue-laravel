@@ -1,0 +1,18 @@
+#barra {
+  background-color: #f9a825 !important;
+}
+
+.icons_login {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+.icons_login .link {
+  padding: 1rem !important;
+}
+/*# sourceMappingURL=styleApp.css.map */
