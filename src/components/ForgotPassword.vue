@@ -24,36 +24,43 @@
   </div>
 </template>
 
+
 <script>
+
 export default {
-  data() {
-    return {
-      message: null,
-      email: "",
-      errors: {},
-    };
-  },
- 
-
-  methods: {
-    async send_email() {
-      try {
-        const rs = await this.axios.post("/api/forgot-password", {email: this.email,});
-        this.$router.push({
-          name: "login",
-          params: {
-            message: rs.data.message,
-          },
-        });
-      } catch (e) {
-        this.errors = {};
-        this.message = null;
-
-        if (e.response.data.errors) this.errors = e.response.data.errors;
-        else if (e.response.data.message)
-          this.message = e.response.data.message;
-      }
+    data() {
+        return {
+            message: null,
+            email: "",
+            errors: {},
+        };
     },
-  },
+    mounted() {
+    },
+
+    methods: {
+        async send_email() {
+            try {
+                
+                const rs = await this.axios.post("/api/forgot-password", {email: this.email});
+                this.$router.push({
+                    name: 'Login',
+                    params: { message: rs.data.message, },
+                    
+                });
+            }
+            catch (e) {
+
+                this.errors = {},
+                this.message = null;
+
+                if (e.response.data.errors)
+                    this.errors = e.response.data.errors;
+                else if (e.response.data.message)
+                    this.errors = e.response.data.message;
+            }
+
+        },
+    },
 };
 </script>

@@ -44,43 +44,48 @@
 </template>
 
 <script>
+
 export default {
-  data() {
-    return {
-      message: null,
-      form: {
-        email: "",
-        password: "",
-        password_confirmation: "",
-        token: null,
-      },
-      errors: {},
-    };
-  },
-  mounted() {
-    if (this.$route.query.token) this.form.token = this.$route.query.token;
-  },
-
-  methods: {
-    async change_password() {
-      try {
-        const rs = await this.axios.post("/api/reset-password", this.form);
-
-        this.$router.push({
-          name: "login",
-          params: {
-            message: rs.data.message,
-          },
-        });
-      } catch (e) {
-        this.errors = {};
-        this.message = null;
-
-        if (e.response.data.errors) this.errors = e.response.data.errors;
-        else if (e.response.data.message)
-          this.message = e.response.data.message;
-      }
+    data() {
+        return {
+            message: '',
+            form: {
+                email: "",
+                password: "",
+                token: '',
+            },
+            errors: {},
+        };
     },
-  },
+    mounted() {
+        if (this.$route.query.token)
+            this.form.token = this.$route.query.token
+    },
+
+    methods: {
+        async change_password() {
+            try {
+                const rs = await this.axios.post("/api/reset-password", this.form);
+
+                this.$router.push({
+                    name: 'Login',
+                    params: { message: rs.data.message, },
+
+                });
+            }
+            catch (e) {
+
+                this.errors = {},
+                this.message = null;
+
+                if (e.response.data.errors)
+                    this.errors = e.response.data.errors;
+
+                if (e.response.data.message)
+                    this.errors = e.response.data.message;                    
+            }
+
+        },
+    },
 };
 </script>
