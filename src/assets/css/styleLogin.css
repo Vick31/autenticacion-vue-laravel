@@ -12,7 +12,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #F8F9F9;
 }
 
 #body-login div #form-login {
@@ -20,10 +19,6 @@
   padding: 2em;
   border: 1px solid #000;
   border-radius: 10px;
-  background-color: #fff;
-}
-
-#body-login div #form-login div .form-control {
   background-color: #fff;
 }
 /*# sourceMappingURL=styleLogin.css.map */

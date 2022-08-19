@@ -44,7 +44,7 @@ export default {
                 
                 const rs = await this.axios.post("/api/forgot-password", {email: this.email});
                 this.$router.push({
-                    name: 'Login',
+                    name: 'Home',
                     params: { message: rs.data.message, },
                     
                 });

@@ -25,7 +25,7 @@
       <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}
       </span>
     </div>
-    <button type="button" @click="register" class="btn btn-primary">
+    <button type="button" @click="register_user()" class="btn btn-primary">
       Guardar
     </button>
     <br />
@@ -58,7 +58,7 @@ export default {
         const rs = await this.axios.post("/api/register", this.form);
 
         this.$router.push({
-          name: 'Login',
+          name: 'Home',
           params: { message: rs.data.message, },
 
         });

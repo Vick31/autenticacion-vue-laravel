@@ -20,7 +20,7 @@ export default {
             this.get_user();
         } else {
             this.$router.push({
-                name: "Login",
+                name: "Home",
                 params: {
                     message: "No estas autorizado para acceder con esta cuenta"
                 }
@@ -40,7 +40,7 @@ export default {
 
             catch (e) {
                 this.$router.push({
-                    name: "Login",
+                    name: "Home",
                     params: {
                         message: "No estas autorizado para acceder con esta cuenta"
                     }
@@ -59,7 +59,7 @@ export default {
 
                 this.$router.push({
 
-                    name: "Login",
+                    name: "Home",
                     params: {
                         message: rs.data.message,
                     },
