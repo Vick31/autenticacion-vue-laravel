@@ -1,53 +1,32 @@
 <template>
   <h1>Registrar</h1>
   <br />
-   <form>
-      <div class="form-floating pb-3">
-        <input
-          type="name"
-          class="form-control"
-          name="name"
-          v-model="form.name"
-        />
-        <label for="floatingInput">Nombre</label>
-        <span v-if="errors.name">{{ errors.name[0] }}</span>
-      </div>
+  <form>
     <div class="form-floating pb-3">
-      <input
-        type="email"
-        class="form-control"
-        placeholder="name@example.com"
-        name="email"
-        v-model="form.email"
-      />
+      <input type="name" class="form-control" name="name" v-model="form.name" />
+      <label for="floatingInput">Nombre</label>
+      <span v-if="errors.name">{{ errors.name[0] }}</span>
+    </div>
+    <div class="form-floating pb-3">
+      <input type="text" class="form-control" name="email" v-model="form.email" />
       <label for="floatingInput">Correo electronico</label>
       <span v-if="errors.email">{{ errors.email[0] }}</span>
     </div>
-    <div class="mb-3">
-      <input
-        type="password"
-        class="form-control"
-        placeholder="contraseña"
-        name="password"
-        v-model="form.password"
-      />
+    <div class="form-floating pb-3">
+      <input type="password" class="form-control"  name="password" v-model="form.password" />
+      <label for="floatingInput">Contraseña</label>
       <span v-if="errors.password">{{ errors.password[0] }} </span>
     </div>
-    <div class="mb-3">
+    <div class="form-floating pb-3">
 
-      <input
-        type="password"
-        class="form-control"
-        placeholder="confirmar contraseña"
-        name=" password_confirmation"
-        v-model="form.password_confirmation"
-      />
-      <span v-if="errors.password_confirmation"
-        >{{ errors.password_confirmation[0] }}
+      <input type="password" class="form-control"  name=" password_confirmation"
+        v-model="form.password_confirmation" />
+        <label for="floatingInput">Confirmar Contraseña</label>
+      <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}
       </span>
     </div>
     <button type="button" @click="register" class="btn btn-primary">
-      Registrase
+      Guardar
     </button>
     <br />
     <p v-if="message">{{ message }}</p>
@@ -58,47 +37,47 @@
 <script>
 
 export default {
-    data() {
-        return {
-            message: '',
-            form: {
-                name: "",
-                email: "",
-                password: "",
-                password_confirmation: "",
-            },
-            errors: {},
-        };
+  data() {
+    return {
+      message: '',
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      },
+      errors: {},
+    };
+  },
+  mounted() {
+  },
+
+  methods: {
+    async register_user() {
+      try {
+        const rs = await this.axios.post("/api/register", this.form);
+
+        this.$router.push({
+          name: 'Login',
+          params: { message: rs.data.message, },
+
+        });
+      }
+      catch (e) {
+
+        this.errors = {},
+          this.message = null;
+
+        if (e.response.data.errors)
+          this.errors = e.response.data.errors;
+
+        if (e.response.data.message)
+          this.errors = e.response.data.message;
+
+        console.log(e)
+      }
+
     },
-    mounted() {
-    },
-
-    methods: {
-        async register_user() {
-            try {
-                const rs = await this.axios.post("/api/register", this.form);
-
-                this.$router.push({
-                    name: 'Login',
-                    params: { message: rs.data.message, },
-
-                });
-            }
-            catch (e) {
-
-                this.errors = {},
-                    this.message = null;
-
-                if (e.response.data.errors)
-                    this.errors = e.response.data.errors;
-
-                if (e.response.data.message)
-                    this.errors = e.response.data.message;
-                    
-                console.log(e)
-            }
-
-        },
-    },
+  },
 };
 </script>
