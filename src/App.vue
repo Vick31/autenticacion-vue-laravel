@@ -52,10 +52,6 @@
                   <label for="floatingPassword">Password</label>
                   <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
                 </div>
-
-
-                <br>
-                <br>
                 <router-link to="/forgot-password">
                   ¿Olvidaste la contraseña?
                 </router-link>
