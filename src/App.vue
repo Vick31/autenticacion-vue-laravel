@@ -73,7 +73,7 @@
 </template>
 <style scoped>
 @import "../src/assets/css/styleApp.css";
-@import "../src/assets/css/styleLogin.css"
+@import "../src/assets/css/styleLogin.css";
 </style>
 
 
