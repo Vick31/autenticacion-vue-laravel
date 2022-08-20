@@ -61,7 +61,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login">
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
+            id="liveToastBtn">
             Login
           </button>
         </div>
@@ -69,18 +70,31 @@
     </div>
   </div>
 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Has iniciado seccion correctamente.
+      </div>
+    </div>
+  </div>
+
 
 </template>
+
+
 <style scoped>
 @import "../src/assets/css/styleApp.css";
 @import "../src/assets/css/styleLogin.css";
 </style>
 
 
-
 <script>
-
-
 export default {
   data() {
     return {
@@ -124,4 +138,14 @@ export default {
     },
   },
 };
+
+const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', () => {
+    const toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
 </script>
