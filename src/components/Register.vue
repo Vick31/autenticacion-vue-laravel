@@ -5,7 +5,7 @@
   <div class="fond"></div>
   <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
 
-  <div>
+  <div class="div-form">
     <form>
       <h1>Registrarse</h1>
       <div class="form-floating pb-3">
