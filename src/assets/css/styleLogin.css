@@ -1,3 +1,13 @@
+@font-face {
+  font-family: font-unique;
+  src: url(fonts/ProductSansRegular.ttf);
+}
+
+@font-face {
+  font-family: font-app;
+  src: url(fonts/Appetite.ttf);
+}
+
 #body-login div input:focus {
   -webkit-box-shadow: 0px 0px 3px #f9a825;
           box-shadow: 0px 0px 3px #f9a825;
