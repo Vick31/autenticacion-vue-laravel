@@ -3,6 +3,8 @@ img {
   top: 0;
   left: 0;
   z-index: -1111;
+  width: 100vw;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -28,6 +30,9 @@ div {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 div form {
