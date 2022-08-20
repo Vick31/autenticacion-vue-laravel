@@ -34,8 +34,8 @@
         </button>
     </div>
     <div>
-
-    </div>
+        
+        </div>
 </template>
 <style scoped>
 @import "../assets/css/styleHome.css";
