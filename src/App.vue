@@ -14,6 +14,10 @@
         </button>
         <router-link class="link" to="/home">inicio</router-link>
         <router-link class="link" to="/register">Registrarse</router-link>
+
+        <span class="material-symbols-outlined">
+          menu
+        </span>
       </div>
 
       <router-link v-if="this.$route.path == '/account'" class="link" to="/account">Tu cuenta</router-link>
