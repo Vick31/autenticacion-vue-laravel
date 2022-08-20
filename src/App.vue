@@ -4,7 +4,7 @@
       <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
 
 
-      <h1>ComidApp</h1>      
+      <h1>ComidApp</h1>
 
       <div class="icons_login">
 
@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="form-floating pb-3">
-                  <input type="password" class="form-control" id="floatingPassword" 
-                    name="password" v-model="form.password" />
+                  <input type="password" class="form-control" id="floatingPassword" name="password"
+                    v-model="form.password" />
                   <label for="floatingPassword">Password</label>
                   <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
                 </div>
@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login" 
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
             id="liveToastBtn">
             Login
           </button>

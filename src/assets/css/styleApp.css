@@ -1,6 +1,6 @@
 @font-face {
   font-family: font-unique;
-  src: url(fonts/ProductSansRegular.ttf);
+  src: url(fonts/ProductSansBold.ttf);
 }
 
 @font-face {
@@ -35,10 +35,6 @@
   background-color: #f9a825 !important;
 }
 
-.form-floating pb-3 {
-  font-family: font-unique !important;
-}
-
 .olvi {
   font-family: font-app !important;
 }
@@ -71,5 +67,23 @@
   #title-nav {
     display: none;
   }
+}
+
+.container {
+  margin: none !important;
+  padding: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=styleApp.css.map */

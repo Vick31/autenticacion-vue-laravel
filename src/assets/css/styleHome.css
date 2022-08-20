@@ -1,0 +1,14 @@
+#carouselExampleFade {
+  width: 80vw;
+  height: 30vh;
+  margin: 2rem;
+}
+
+img {
+  background-repeat: repeat-x;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80vw;
+  height: 30vh;
+}
+/*# sourceMappingURL=styleHome.css.map */
