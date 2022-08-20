@@ -1,9 +1,10 @@
 <template>
-  <h5>Recuperar constraseña</h5>
-  <br>
+  
   <div>
+    <h5>¿Olvidaste tu contraseña?</h5>
+    <br>
     <form id="te">
-      <h1 class="n3 mb-3 fw">Confirma correo electronico</h1>
+      <h1 class="n3 mb-3 fw">Confirma tu correo electrónico</h1>
       <div class="form-floating pb-3">
         <input
           type="email"
@@ -23,6 +24,10 @@
     </form>
   </div>
 </template>
+
+<style scoped>
+  @import "../assets/css/styleForgotPassword.css";
+</style>
 
 
 <script>
