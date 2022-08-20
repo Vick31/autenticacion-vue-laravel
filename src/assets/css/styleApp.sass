@@ -1,11 +1,13 @@
+
 @font-face 
     font-family: font-unique;
     src: url(fonts/ProductSansRegular.ttf);
 @font-face 
     font-family: font-app;
-    src: url(fonts/Appetite.ttf);
+    src: url(fonts/Appetite.ttf);   
 
-    
+
+
 #barra
     background-color: #f9a825 !important
     font-family: font-app !important
@@ -15,6 +17,7 @@
     flex-direction: row !important
     .link
         padding: 1rem !important   
+
 
 .modal-title
     font-family: font-app !important
@@ -33,4 +36,21 @@
     
 #liveToastBtn
     font-family: font-app !important
+
+#btn-menu
+    display: none
+    color: #fff
+    border: 1px solid white 
+    padding: 5px
+    font-size: 2em
+    height: max-content
+    border-radius: 10px
+    // btn menu
+
+@media (max-width: 768px)
+    #btn-menu
+        display: block
+
+    #title-nav
+        display: none
 
