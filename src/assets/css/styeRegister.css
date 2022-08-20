@@ -1,0 +1,39 @@
+img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1111;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fond {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1110;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+div form {
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  width: 25em;
+}
+/*# sourceMappingURL=styeRegister.css.map */

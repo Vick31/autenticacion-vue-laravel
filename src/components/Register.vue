@@ -1,38 +1,49 @@
 <template>
-  <h1>Registrar</h1>
-  <br />
-  <form>
-    <div class="form-floating pb-3">
-      <input type="name" class="form-control" name="name" v-model="form.name" />
-      <label for="floatingInput">Nombre</label>
-      <span v-if="errors.name">{{ errors.name[0] }}</span>
-    </div>
-    <div class="form-floating pb-3">
-      <input type="text" class="form-control" name="email" v-model="form.email" />
-      <label for="floatingInput">Correo electronico</label>
-      <span v-if="errors.email">{{ errors.email[0] }}</span>
-    </div>
-    <div class="form-floating pb-3">
-      <input type="password" class="form-control"  name="password" v-model="form.password" />
-      <label for="floatingInput">Contraseña</label>
-      <span v-if="errors.password">{{ errors.password[0] }} </span>
-    </div>
-    <div class="form-floating pb-3">
 
-      <input type="password" class="form-control"  name=" password_confirmation"
-        v-model="form.password_confirmation" />
+
+
+  <div class="fond"></div>
+  <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
+
+  <div>
+    <form>
+      <h1>Registrarse</h1>
+      <div class="form-floating pb-3">
+        <input type="name" class="form-control" name="name" v-model="form.name" />
+        <label for="floatingInput">Nombre</label>
+        <span v-if="errors.name">{{ errors.name[0] }}</span>
+      </div>
+      <div class="form-floating pb-3">
+        <input type="text" class="form-control" name="email" v-model="form.email" />
+        <label for="floatingInput">Correo electronico</label>
+        <span v-if="errors.email">{{ errors.email[0] }}</span>
+      </div>
+      <div class="form-floating pb-3">
+        <input type="password" class="form-control" name="password" v-model="form.password" />
+        <label for="floatingInput">Contraseña</label>
+        <span v-if="errors.password">{{ errors.password[0] }} </span>
+      </div>
+      <div class="form-floating pb-3">
+
+        <input type="password" class="form-control" name=" password_confirmation"
+          v-model="form.password_confirmation" />
         <label for="floatingInput">Confirmar Contraseña</label>
-      <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}
-      </span>
-    </div>
-    <button type="button" @click="register_user()" class="btn btn-primary">
-      Guardar
-    </button>
-    <br />
-    <p v-if="message">{{ message }}</p>
-  </form>
+        <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}
+        </span>
+      </div>
+      <button type="button" @click="register_user()" class="btn btn-primary">
+        Guardar
+      </button>
+      <br />
+      <p v-if="message">{{ message }}</p>
+    </form>
+  </div>
 </template>
 
+
+<style scoped>
+@import "../assets/css/styeRegister.css";
+</style>
 
 <script>
 
