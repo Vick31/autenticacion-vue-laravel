@@ -5,9 +5,9 @@
   <div class="fond"></div>
   <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
 
-  <div class="div-form">
+  <div class="div-form ">
     <form>
-      <h1>Registrarse</h1>
+      <h1 class="title">Registrarse</h1>
       <div class="form-floating pb-3">
         <input type="name" class="form-control" name="name" v-model="form.name" />
         <label for="floatingInput">Nombre</label>
@@ -31,7 +31,7 @@
         <span v-if="errors.password_confirmation">{{ errors.password_confirmation[0] }}
         </span>
       </div>
-      <button type="button" @click="register_user()" class="btn btn-primary">
+      <button type="button" @click="register_user()" class="btn btn-primary save">
         Guardar
       </button>
       <br />

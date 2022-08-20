@@ -3,7 +3,6 @@
     <div class="container-fluid">
       <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
 
-
       <h1 id="title-nav">ComidApp</h1>
 
       <div class="icons_login">
