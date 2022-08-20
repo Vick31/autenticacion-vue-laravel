@@ -36,15 +36,15 @@ img {
 }
 
 .div-form form {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.7);
   padding: 1em;
   border-radius: 10px;
   width: 25em;
 }
 
 input:focus {
-  -webkit-box-shadow: 0px 0px 3px #f9a825;
-          box-shadow: 0px 0px 3px #f9a825;
+  -webkit-box-shadow: 0px 0px 10px #f9a825;
+          box-shadow: 0px 0px 10px #f9a825;
   border-color: #f9a825;
 }
 
@@ -60,8 +60,8 @@ input:focus {
 }
 
 button:focus {
-  -webkit-box-shadow: 0px 0px 3px #f9a825;
-          box-shadow: 0px 0px 3px #f9a825;
+  -webkit-box-shadow: 0px 0px 10px #f9a825;
+          box-shadow: 0px 0px 10px #f9a825;
   border-color: #f9a825;
 }
 /*# sourceMappingURL=styeRegister.css.map */
