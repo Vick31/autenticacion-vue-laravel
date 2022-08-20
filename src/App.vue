@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
 
-      <h2>ComidApp</h2>
+      <h2 id="title-nav">ComidApp</h2>
 
 
       <div class="icons_login">
@@ -15,9 +15,21 @@
         <router-link class="link" to="/home">inicio</router-link>
         <router-link class="link" to="/register">Registrarse</router-link>
 
-        <span class="material-symbols-outlined" id="btn-menu">
-          menu
-        </span>
+
+        <div class="btn-group">
+          <span class="material-symbols-outlined" id="btn-menu" data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            menu
+          </span>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li><button class="dropdown-item" type="button">Action</button></li>
+            <li><button class="dropdown-item" type="button">Another action</button></li>
+            <li><button class="dropdown-item" type="button">Something else here</button></li>
+          </ul>
+        </div>
+
+
+
       </div>
 
       <router-link v-if="this.$route.path == '/account'" class="link" to="/account">Tu cuenta</router-link>

@@ -32,5 +32,8 @@
   #btn-menu {
     display: block;
   }
+  #title-nav {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styleApp.css.map */
