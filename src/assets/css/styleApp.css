@@ -15,4 +15,22 @@
 .icons_login .link {
   padding: 1rem !important;
 }
+
+#btn-menu {
+  display: none;
+  color: #fff;
+  border: 1px solid white;
+  padding: 5px;
+  font-size: 2em;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  #btn-menu {
+    display: block;
+  }
+}
 /*# sourceMappingURL=styleApp.css.map */

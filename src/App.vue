@@ -15,7 +15,7 @@
         <router-link class="link" to="/home">inicio</router-link>
         <router-link class="link" to="/register">Registrarse</router-link>
 
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" id="btn-menu">
           menu
         </span>
       </div>
