@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
 
-      <h2>ComidApp</h2>
+      <h1>ComidApp</h1>
 
 
       <div class="icons_login">
@@ -49,14 +49,14 @@
                 </div>
 
                 <div class="form-floating pb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="contraseña"
+                  <input type="password" class="form-control" id="floatingPassword" 
                     name="password" v-model="form.password" />
                   <label for="floatingPassword">Password</label>
                   <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
                 </div>
 
-                <button data-bs-dismiss="modal" style="border: none; background: none;">
-                  <router-link to="/forgot-password">¿Olvidaste tu contraseña?</router-link>
+                <button data-bs-dismiss="modal" style="border: none; background: none;" class="olvi">
+                  <router-link to="/forgot-password" class="contra">¿Olvidaste tu contraseña?</router-link>
                 </button>
 
                 <p v-if="message">{{ message }}</p>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login" 
             id="liveToastBtn">
             Login
           </button>
