@@ -4,35 +4,46 @@
       <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
 
 
-      <h1>ComidApp</h1>
-
-      <h2 id="title-nav">ComidApp</h2>
-
-
+      <h1 id="title-nav">ComidApp</h1>
 
       <div class="icons_login">
-
-
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Login
-        </button>
-        <router-link class="link" to="/home">inicio</router-link>
-        <router-link class="link" to="/register">Registrarse</router-link>
-
-
-        <div class="btn-group">
-          <span class="material-symbols-outlined" id="btn-menu" data-bs-toggle="dropdown" data-bs-display="static"
-            aria-expanded="false">
-            menu
-          </span>
-          <ul class="dropdown-menu dropdown-menu-lg-end">
-            <li><button class="dropdown-item" type="button">Action</button></li>
-            <li><button class="dropdown-item" type="button">Another action</button></li>
-            <li><button class="dropdown-item" type="button">Something else here</button></li>
-          </ul>
+        <div class="container-link">
+          <div>
+            <span @click="mostrar_btn()" class="material-symbols-outlined link-btn btn-nav-link" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">
+              logout
+            </span>
+          </div>
+          <div>
+            <p class="link text-nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Iniciar sesion
+            </p>
+          </div>
         </div>
 
+        <div class="container-link">
+          <router-link class=" btn-nav-link" to="/home">
+            <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
+              home
+            </span>
+          </router-link>
+          <router-link class="link text-nav-link" to="/home">
+            <p>Inicio</p>
+          </router-link>
+        </div>
 
+        <div class="container-link">
+          <router-link class="btn-nav-link" to="/register">
+            <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
+              how_to_reg
+            </span>
+          </router-link>
+          <router-link class="link text-nav-link" to="/register">
+            <p>Registrarse</p>
+          </router-link>
+        </div>
+
+        <span class="material-symbols-outlined" id="btn-menu" @click="mostrar_links()">menu</span>
 
       </div>
 
@@ -65,8 +76,8 @@
                 </div>
 
                 <div class="form-floating pb-3">
-                  <input type="password" class="form-control" id="floatingPassword" 
-                    name="password" v-model="form.password" />
+                  <input type="password" class="form-control" id="floatingPassword" name="password"
+                    v-model="form.password" />
                   <label for="floatingPassword">Password</label>
                   <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
                 </div>
@@ -81,7 +92,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login" 
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
             id="liveToastBtn">
             Login
           </button>
@@ -156,6 +167,22 @@ export default {
       }
 
     },
+    mostrar_links() {
+      let a = document.getElementsByClassName('btn-nav-link')
+      for (let i = 0; i < a.length; i++) {
+        a[i].style.display = 'block';
+      }
+
+      document.getElementById('btn-menu').style.display = 'none'
+    },
+    mostrar_btn(){
+      let a = document.getElementsByClassName('btn-nav-link')
+      for (let i = 0; i < a.length; i++) {
+        a[i].style.display = 'none';
+      }
+
+      document.getElementById('btn-menu').style.display = 'block'
+    }
   },
 };
 
@@ -168,4 +195,5 @@ if (toastTrigger) {
     toast.show()
   })
 }
+
 </script>
