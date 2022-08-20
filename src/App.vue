@@ -7,7 +7,7 @@
 
 
       <div class="icons_login">
-        
+
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           Login
@@ -31,17 +31,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Iniciar sesion</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div id="body-login">
             <div>
-              <h1>Iniciar sesion</h1>
               <form id="form-login">
                 <div class="form-floating pb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-                    name="email" v-model="form.email" />
+                  <input type="email" class="form-control" id="floatingInput" name="email" v-model="form.email" />
                   <label for="floatingInput">Correo electronico</label>
                   <span class="errors-message" v-if="errors.email">{{ errors.email[0] }}</span>
                 </div>
@@ -52,17 +50,18 @@
                   <label for="floatingPassword">Password</label>
                   <span class="errors-message" v-if="errors.password">{{ errors.password[0] }} </span>
                 </div>
-                <router-link to="/forgot-password">
-                  ¿Olvidaste la contraseña?
-                </router-link>
+
+                <button data-bs-dismiss="modal" style="border: none; background: none;">
+                  <router-link to="/forgot-password">¿Olvidaste tu contraseña?</router-link>
+                </button>
+
                 <p v-if="message">{{ message }}</p>
               </form>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary">
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login">
             Login
           </button>
         </div>
@@ -74,6 +73,7 @@
 </template>
 <style scoped>
 @import "../src/assets/css/styleApp.css";
+@import "../src/assets/css/styleLogin.css"
 </style>
 
 
