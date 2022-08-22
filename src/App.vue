@@ -169,7 +169,7 @@ export default {
     mostrar_links() {
       let a = document.getElementsByClassName('btn-nav-link')
       for (let i = 0; i < a.length; i++) {
-        a[i].style.display = 'block';
+        a[i].style.transform = 'translatex(0em)'
       }
 
       document.getElementById('btn-menu').style.display = 'none'
@@ -177,7 +177,7 @@ export default {
     mostrar_btn(){
       let a = document.getElementsByClassName('btn-nav-link')
       for (let i = 0; i < a.length; i++) {
-        a[i].style.display = 'none';
+        a[i].style.transform ='translate(12em)'
       }
 
       document.getElementById('btn-menu').style.display = 'block'

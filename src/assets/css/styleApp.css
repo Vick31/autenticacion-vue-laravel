@@ -8,6 +8,11 @@
   src: url(fonts/Appetite.ttf);
 }
 
+* {
+  -webkit-transition: 1000ms all ease;
+  transition: 1000ms all ease;
+}
+
 #barra {
   background-color: #f9a825 !important;
   font-family: font-app !important;
@@ -81,7 +86,7 @@
 }
 
 .link-btn {
-  padding: 0.5em !important;
+  padding: 0.5em;
   font-size: 2em;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
@@ -112,7 +117,10 @@
     display: none;
   }
   .btn-nav-link {
-    display: none;
+    -webkit-transform: translate(12em);
+            transform: translate(12em);
+    -webkit-transition: 300ms all ease;
+    transition: 300ms all ease;
   }
   .text-nav-link {
     display: none;

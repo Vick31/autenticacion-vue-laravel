@@ -6,6 +6,8 @@
     font-family: font-app;
     src: url(fonts/Appetite.ttf);   
 
+*
+    transition: 1000ms all ease
 
 #barra
     background-color: #f9a825 !important
@@ -54,7 +56,7 @@
         padding: 0 !important
         margin: 0 !important
 .link-btn
-    padding: 0.5em !important
+    padding: 0.5em 
     font-size: 2em
     color: rgba(255,255,255,.7)
     text-shadow: 0px 0px 8px rgba(255,255,255,.5)
@@ -82,7 +84,9 @@
         display: none
     
     .btn-nav-link
-        display: none
+        transform: translate(12em)
+        transition: 300ms all ease
+        
     
     .text-nav-link
         display: none
@@ -91,6 +95,7 @@
 
     .btn-nav-link
         display: none
+        
 
     .text-nav-link
         display: block
