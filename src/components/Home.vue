@@ -33,10 +33,41 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div>
-        
+    <div class="container_empresa" >
+        v-for="p in product_list" 
+    <div class="empresa button" >
+        <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
+        <!-- <h4>{{p.nombre_empresa}}</h4> -->        
+        </div>
         </div>
 </template>
 <style scoped>
 @import "../assets/css/styleHome.css";
 </style>
+
+
+<!-- <script>
+
+
+export default {
+  data() {
+    return {
+      product_list:[];
+    };
+  },
+  mounted() {
+    this.get_token();
+    this.index();
+  },
+
+  methods: {
+   async get_token() {
+            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        },
+        async index() {
+            let response = await axios.get("http://127.0.0.1:8000/api/product");
+            this.product_list = response.data;
+        },
+  }
+}
+</script> -->
