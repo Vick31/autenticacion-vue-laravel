@@ -8,7 +8,7 @@
       <div class="icons_login">
         <div class="container-link">
           <div>
-            <span @click="mostrar_btn()" class="material-symbols-outlined link-btn btn-nav-link" data-bs-toggle="modal"
+            <span @click="mostrar_btn()" class="material-symbols-outlined btn-nav-link link-btn" data-bs-toggle="modal"
               data-bs-target="#staticBackdrop">
               logout
             </span>
@@ -169,10 +169,10 @@ export default {
     mostrar_links() {
       let a = document.getElementsByClassName('btn-nav-link')
       for (let i = 0; i < a.length; i++) {
-        a[i].style.transform = 'translatex(0em)'
+        a[i].style.transform = 'translatex(1em)'
       }
 
-      document.getElementById('btn-menu').style.display = 'none'
+      document.getElementById('btn-menu').style.transform = 'scale(0)'
     },
     mostrar_btn(){
       let a = document.getElementsByClassName('btn-nav-link')
@@ -180,7 +180,7 @@ export default {
         a[i].style.transform ='translate(12em)'
       }
 
-      document.getElementById('btn-menu').style.display = 'block'
+      document.getElementById('btn-menu').style.transform = 'scale(1)'
     }
   },
 };
