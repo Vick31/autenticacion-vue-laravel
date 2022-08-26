@@ -44,7 +44,7 @@
     </div>
 </template>
 <style scoped>
-@import "../assets/css/styleselect.css";
+@import "../assets/css/styleSelect.css";
 </style>
 
 

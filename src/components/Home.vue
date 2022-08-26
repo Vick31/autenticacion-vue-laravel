@@ -33,12 +33,15 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="container_empresa" >
-        
+    <div class="container_empresa">
+
+        <!-- JOHAN  -->
+
         <div class="empresa button" v-for="p in list_company">
-        <a href="Select">
-            <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
-            <h4>{{ p.name }}</h4>
+            <a href="Select">
+                <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
+                    alt="">
+                <h4>{{ p.name }}</h4>
             </a>
         </div>
     </div>
