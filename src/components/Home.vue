@@ -37,9 +37,9 @@
 
         <!-- JOHAN  -->
 
-        <div class="empresa button" v-for="p in list_company">
+        <div class="empresa button" v-for="p in list_company" @click="insertar(p.name)">
             <a href="Select">
-                <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
+                <img :src="'../../img/comidas/' + p.img"
                     alt="">
                 <h4>{{ p.name }}</h4>
             </a>
@@ -64,48 +64,63 @@ export default {
     created() {
         this.list_company = [
             {
+                img: 'img1.jpg',
                 name: 'Donde Igor'
             },
             {
+                img: 'img2.jpg',
                 name: 'El negro'
             },
             {
+                img: 'img3.jpg',
                 name: 'Food House'
             },
             {
+                img: 'img4.jpg',
                 name: 'Punto Rosa'
             },
             {
+                img: 'img1.jpg',
                 name: 'Adsi'
             },
             {
+                img: 'img2.jpg',
                 name: 'Donde Igor'
             },
             {
+                img: 'img3.jpg',
                 name: 'El negro'
             },
             {
+                img: 'img4.jpg',
                 name: 'Food House'
             },
             {
+                img: 'img1.jpg',
                 name: 'Punto Rosa'
             },
             {
+                img: 'img2.jpg',
                 name: 'Adsi'
             },
             {
+                img: 'img3.jpg',
                 name: 'Donde Igor'
             },
             {
+                img: 'img4.jpg',
                 name: 'El negro'
             },
             {
+                img: 'img1.jpg',
                 name: 'Food House'
             },
             {
+                img: 'img2.jpg',
                 name: 'Punto Rosa'
             },
             {
+                img: 'img3.jpg',
                 name: 'Adsi'
             },
         ]
@@ -124,6 +139,10 @@ export default {
             let response = await axios.get("http://127.0.0.1:8000/api/product");
             this.product_list = response.data;
         },
+        insertar(buscar) {
+            let item = this.list_company.find(pro => pro.name == buscar)
+            let encontrado = this.item_factura.find((pro) => pro.name == item.name)
+        }
     }
 }
 </script>
