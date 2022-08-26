@@ -1,18 +1,21 @@
 <template>
-<div>
-    <img src="../../img/" alt="">
-</div>
+    <div v-for="p in list_tipo">
+        <img :src="'../../img/comidas/' + p.img" alt="">
+        <h1> {{ p.name }} </h1>
 
-    
-    <div class="container_empresa" >
-        
-        <div class="empresa button" v-for="p in list_hambuguer">
-        <a href="Topings">
-            <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
-            <h4>{{ p.name }}</h4>
+    </div>
+
+
+    <!-- <div class="container_empresa">
+
+        <div class="empresa button" v-for="p in ">
+            <a href="Topings">
+                <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
+                    alt="">
+                <h4>{{ p.name }}</h4>
             </a>
         </div>
-    </div>
+    </div> -->
 </template>
 <style scoped>
 @import "../assets/css/styleToping.css";
@@ -25,33 +28,20 @@
 export default {
     data() {
         return {
-            list_hambuguer: []
+            list_tipo: [],
+            list_toping: [],
         };
 
     },
     created() {
-        this.list_hambuguer = [
+        this.list_tipo = [
             {
-                name: 'PAN RES'
-            },
-            {
-                name: 'PLATANO RES'
-            },
-            {
-                name: 'PAN POLLO'
-            },
-            {
-                name: 'PLATANO POLLO'
-            },
-            {
-                name: 'PAN CERDO'
-            },
-            {
-                name: 'PLATANO CERDO'
-            },
-           
-      
+                name: "igor",
+                img: "img1"
+            }
+
         ]
+            
 
     },
     mounted() {
