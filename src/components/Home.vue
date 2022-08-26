@@ -57,7 +57,7 @@
 export default {
     data() {
         return {
-            list_company: []
+            list_company: [],
         };
 
     },
@@ -141,7 +141,10 @@ export default {
         },
         insertar(buscar) {
             let item = this.list_company.find(pro => pro.name == buscar)
-            let encontrado = this.item_factura.find((pro) => pro.name == item.name)
+            let encontrado = this.list_company.find((pro) => pro.name == item.name)
+            if(encontrado == undefined) {
+                localStorage.name = item
+            }
         }
     }
 }
