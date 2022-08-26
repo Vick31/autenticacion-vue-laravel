@@ -4,6 +4,7 @@ import Account from "./components/Account.vue";
 import Home from "./components/Home.vue";
 import ForgotPassword from "./components/ForgotPassword.vue";
 import ResetPassword from "./components/ResetPassword.vue";
+import Select from "./components/Select.vue"
 
 
 const routes = [
@@ -32,7 +33,12 @@ const routes = [
         path: "/reset-password",
         name: "ResetPassword",
         component: ResetPassword,
-    }
+    },
+    {
+        path: "/Select",
+        name: "Select",
+        component: Select,
+    },
 ];
 
 const _router = createRouter({

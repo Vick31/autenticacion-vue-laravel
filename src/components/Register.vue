@@ -1,7 +1,4 @@
 <template>
-
-
-
   <div class="fond"></div>
   <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
 

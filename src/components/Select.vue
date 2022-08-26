@@ -35,7 +35,7 @@
     </div>
     <div class="container_empresa" >
         
-        <div class="empresa button" v-for="p in list_company">
+        <div class="empresa button" v-for="p in list_hambuguer">
         <a href="Select">
             <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
             <h4>{{ p.name }}</h4>
@@ -44,7 +44,7 @@
     </div>
 </template>
 <style scoped>
-@import "../assets/css/styleHome.css";
+@import "../assets/css/styleselect.css";
 </style>
 
 
@@ -54,57 +54,32 @@
 export default {
     data() {
         return {
-            list_company: []
+            list_hambuguer: []
         };
 
     },
     created() {
-        this.list_company = [
+        this.list_hambuguer = [
             {
-                name: 'Donde Igor'
+                name: 'PAN RES'
             },
             {
-                name: 'El negro'
+                name: 'PLATANO RES'
             },
             {
-                name: 'Food House'
+                name: 'PAN POLLO'
             },
             {
-                name: 'Punto Rosa'
+                name: 'PLATANO POLLO'
             },
             {
-                name: 'Adsi'
+                name: 'PAN CERDO'
             },
             {
-                name: 'Donde Igor'
+                name: 'PLATANO CERDO'
             },
-            {
-                name: 'El negro'
-            },
-            {
-                name: 'Food House'
-            },
-            {
-                name: 'Punto Rosa'
-            },
-            {
-                name: 'Adsi'
-            },
-            {
-                name: 'Donde Igor'
-            },
-            {
-                name: 'El negro'
-            },
-            {
-                name: 'Food House'
-            },
-            {
-                name: 'Punto Rosa'
-            },
-            {
-                name: 'Adsi'
-            },
+           
+      
         ]
 
     },
@@ -124,3 +99,5 @@ export default {
     }
 }
 </script>
+
+
