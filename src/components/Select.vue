@@ -36,7 +36,7 @@
     <div class="container_empresa" >
         
         <div class="empresa button" v-for="p in list_hambuguer">
-        <a href="Select">
+        <a href="Topings">
             <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
             <h4>{{ p.name }}</h4>
             </a>

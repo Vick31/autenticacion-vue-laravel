@@ -5,6 +5,7 @@ import Home from "./components/Home.vue";
 import ForgotPassword from "./components/ForgotPassword.vue";
 import ResetPassword from "./components/ResetPassword.vue";
 import Select from "./components/Select.vue"
+import Topings from "./components/Topings.vue"
 
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
         path: "/Select",
         name: "Select",
         component: Select,
+    },
+    {
+        path: "/Topings",
+        name: "Topings",
+        component: Topings,
     },
 ];
 
