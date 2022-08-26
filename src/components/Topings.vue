@@ -2,5 +2,5 @@
 
 </template>
 <style scoped>
-@import "../assets/css/styleTopings.css";
+@import "../assets/css/styleToping.css";
 </style>
