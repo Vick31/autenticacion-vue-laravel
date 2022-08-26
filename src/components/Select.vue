@@ -34,7 +34,6 @@
         </button>
     </div>
     <div class="container_empresa" >
-        
         <div class="empresa button" v-for="p in list_hambuguer">
         <a href="Topings">
             <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
@@ -84,18 +83,10 @@ export default {
 
     },
     mounted() {
-        this.get_token();
-        this.index();
     },
 
     methods: {
-        async get_token() {
-            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        },
-        async index() {
-            let response = await axios.get("http://127.0.0.1:8000/api/product");
-            this.product_list = response.data;
-        },
+
     }
 }
 </script>

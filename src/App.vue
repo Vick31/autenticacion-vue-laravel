@@ -1,9 +1,11 @@
 <template>
   <nav class="navbar bg-light" id="barra">
     <div class="container-fluid">
-      <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top">
+      <router-link to="/home">
+        <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top" style="cursor:pointer">
+      </router-link>
 
-      <h1 id="title-nav">ComidApp</h1>
+      <h1 id="title-nav" style="cursor:pointer">ComidApp</h1>
 
       <div class="icons_login">
         <div class="container-link">
@@ -174,10 +176,10 @@ export default {
 
       document.getElementById('btn-menu').style.transform = 'scale(0)'
     },
-    mostrar_btn(){
+    mostrar_btn() {
       let a = document.getElementsByClassName('btn-nav-link')
       for (let i = 0; i < a.length; i++) {
-        a[i].style.transform ='translate(12em)'
+        a[i].style.transform = 'translate(12em)'
       }
 
       document.getElementById('btn-menu').style.transform = 'scale(1)'
