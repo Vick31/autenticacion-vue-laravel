@@ -34,15 +34,27 @@
         </button>
     </div>
     <div class="container_empresa">
-
-        <!-- JOHAN  -->
-
-        <div class="empresa button" v-for="p in list_company" @click="insertar(p.name)">
-            <a href="Select">
-                <img :src="'../../img/comidas/' + p.img"
-                    alt="">
-                <h4>{{ p.name }}</h4>
-            </a>
+        <div class="container_empresas">
+            <h2>Vistados recientemente</h2>
+            <div>
+                <div class="empresa button" v-for="p in recent_list" @click="insertar(p.name)">
+                    <a href="Select">
+                        <img :src="'../../img/comidas/' + p.img" alt="">
+                        <h4>{{  p.name  }}</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container_empresas">
+            <h2>Prueba algo nuevo</h2>
+            <div>
+                <div class="empresa button" v-for="p in list_company" @click="insertar(p.name)">
+                    <a href="Select">
+                        <img :src="'../../img/comidas/' + p.img" alt="">
+                        <h4>{{  p.name  }}</h4>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -58,10 +70,29 @@ export default {
     data() {
         return {
             list_company: [],
+            recent_list: []
         };
 
     },
     created() {
+        this.recent_list = [
+            {
+                img: 'img1.jpg',
+                name: 'Donde Igor'
+            },
+            {
+                img: 'img2.jpg',
+                name: 'El negro'
+            },
+            {
+                img: 'img3.jpg',
+                name: 'Food House'
+            },
+            {
+                img: 'img4.jpg',
+                name: 'Punto Rosa'
+            },
+        ]
         this.list_company = [
             {
                 img: 'img1.jpg',
@@ -142,7 +173,7 @@ export default {
         insertar(buscar) {
             let item = this.list_company.find(pro => pro.name == buscar)
             let encontrado = this.list_company.find((pro) => pro.name == item.name)
-            if(encontrado == undefined) {
+            if (encontrado == undefined) {
                 localStorage.name = item
             }
         }

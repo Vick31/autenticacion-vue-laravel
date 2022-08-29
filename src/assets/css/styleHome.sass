@@ -2,38 +2,48 @@
 #carouselExampleFade
     width: 80vw
     height: 30vh
-    margin: 2rem
-    mar
 
 img
     background-repeat: repeat-x
     object-fit: cover
     width: 80vw
-    height: 30vh
+    height: 25vh
 
 .container_empresa
     display: flex
-    flex-wrap: wrap
-    align-content: center
-    // justify-content: center
-    // border: solid 1px red
-    .empresa
-        margin: 0.7rem
+    flex-direction: column
+    align-items: center
 
-        a
-            width: 11em
-            height: 11em
+    .container_empresas
+        width: 90vw
+        display: flex
+        flex-direction: column
+        // border: 1px solid
+
+        h2
+            margin: 1em
+        div
             display: flex
-            flex-direction: column
-            // border: 1px solid red
-            align-content: center
-            justify-content: center
-            text-decoration: none !important
-            color: black
-            align-items: center
-            text-align: center
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: space-around
 
-        img
-            border-radius: 100%
-            width: 7em
-            height: 7em
+            .empresa
+                // border: 1px solid blue
+                a
+                    width: 11em
+                    height: 11em
+                    display: flex
+                    flex-direction: column
+                    // border: 1px solid red
+                    align-content: center
+                    justify-content: center
+                    text-decoration: none !important
+                    color: black
+                    align-items: center
+                    text-align: center
+
+                    img
+                        border-radius: 100%
+                        width: 7em
+                        height: 7em

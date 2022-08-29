@@ -1,44 +1,30 @@
 <template>
 
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../img/slide1.jpg" class="d-block ">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/slide2.jpg" class="d-block ">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/slide3.jpg" class="d-block ">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+    <div class="container_empresa">
+        <div>
+            <h2>
+                Elige tu comida
+            </h2>
+            <div>
+                <div class="empresa button" v-for="p in list_hambuguer">
+                    <a href="Topings">
+                        <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
+                            alt="">
+                        <h4>{{  p.name  }}</h4>
+                    </a>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="container_empresa" >
-        <div class="empresa button" v-for="p in list_hambuguer">
-        <a href="Topings">
-            <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg" alt="">
-            <h4>{{ p.name }}</h4>
-            </a>
+        <div class="maps">
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2303.8923872806686!2d-75.59563870111862!3d1.6288451132891066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8e2451f51faf07c5%3A0x3e70f4efd3e1d405!2sRANCHO%20BURGER%2C%20Cl%2016%2C%20Florencia%2C%20Caquet%C3%A1!3m2!1d1.6289311!2d-75.59517439999999!5e0!3m2!1ses!2sco!4v1661783624907!5m2!1ses!2sco"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div>
+
+            </div>
         </div>
     </div>
 </template>
@@ -77,8 +63,8 @@ export default {
             {
                 name: 'PLATANO CERDO'
             },
-           
-      
+
+
         ]
 
     },
