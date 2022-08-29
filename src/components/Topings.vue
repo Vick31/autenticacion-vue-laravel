@@ -1,21 +1,11 @@
 <template>
-    <div v-for="p in list_tipo">
-        <img :src="'../../img/comidas/' + p.img" alt="">
-        <h1> {{ p.name }} </h1>
-
+    <div class="Container_div">
+        <div v-for="p in list_tipo" class="contenedor">
+            <img :src="'../../img/comidas/' + p.img" alt="">
+            <h1> {{ p.name }} </h1>
+        </div>
     </div>
 
-
-    <!-- <div class="container_empresa">
-
-        <div class="empresa button" v-for="p in ">
-            <a href="Topings">
-                <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
-                    alt="">
-                <h4>{{ p.name }}</h4>
-            </a>
-        </div>
-    </div> -->
 </template>
 <style scoped>
 @import "../assets/css/styleToping.css";
@@ -36,12 +26,12 @@ export default {
     created() {
         this.list_tipo = [
             {
-                name: "igor",
-                img: "img1"
+                name: "Donde Igor",
+                img: "img1.jpg"
             }
 
         ]
-            
+
 
     },
     mounted() {
