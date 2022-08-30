@@ -2,6 +2,7 @@
 
     <div class="container_empresa">
         <div>
+            <p> {{ nombre_recibido }} </p>
             <h2>
                 Elige tu comida
             </h2>
@@ -39,10 +40,15 @@
 export default {
     data() {
         return {
-            list_hambuguer: []
+            list_hambuguer: [],
+            nombre_recibido: ''
         };
-
     },
+
+    props: {
+        nombre_recibido: ''
+    },
+
     created() {
         this.list_hambuguer = [
             {
@@ -63,18 +69,19 @@ export default {
             {
                 name: 'PLATANO CERDO'
             },
-
-
+            
         ]
-
+        
     },
     mounted() {
+        console.log(this.nombre_recibido)
     },
 
     methods: {
 
     }
 }
+
 </script>
 
 
