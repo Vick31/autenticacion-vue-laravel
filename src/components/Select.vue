@@ -2,12 +2,10 @@
 
     <div class="container_empresa">
         <div>
-            name:
             <h4 v-for="p in nameArticle"> {{ p}} </h4>
+            <br>
+            <h2>Elige tu comida</h2>
             <div>
-                <h2>
-                    Elige tu comida
-                </h2>
                 <div class="empresa button" v-for="p in list_hambuguer">
                     <a href="Topings">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
