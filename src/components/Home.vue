@@ -49,7 +49,7 @@
             <h2>Prueba algo nuevo</h2>
             <div :nombre_recibido="nombre_enviar">
                 <div class="empresa button" v-for="p in articles_list" @click="insertar(p.name)">
-                    <a >
+                    <a href="Select">
                         <img :src="'../../img/comidas/' + p.image" alt="">
                         <h4>{{  p.name  }}</h4>
                     </a>
@@ -142,11 +142,13 @@ export default {
             this.articles_list = response.data.articles;
         },
         insertar(buscar) {
-            let item = this.list_company.find(pro => pro.name == buscar)
-            let encontrado = this.list_company.find((pro) => pro.name == item.name)
-            if (encontrado == undefined) {
-                this.nombre_enviar = item
-                console.log(item)
+            let item = this.articles_list.find(pro => pro.name == buscar)
+            let encontrado = this.articles_list.find((pro) => pro.name == item.name)
+            if (encontrado != undefined) {
+                console.log(encontrado.name, encontrado.image)
+
+                localStorage.setItem('name', encontrado.name)
+                localStorage.setItem('image', encontrado.image)
             }
             
         }

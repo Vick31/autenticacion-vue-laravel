@@ -2,16 +2,17 @@
 
     <div class="container_empresa">
         <div>
-            <p> {{ nombre_recibido }} </p>
-            <h2>
-                Elige tu comida
-            </h2>
+            name:
+            <h4 v-for="p in nameArticle"> {{ p}} </h4>
             <div>
+                <h2>
+                    Elige tu comida
+                </h2>
                 <div class="empresa button" v-for="p in list_hambuguer">
                     <a href="Topings">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
-                        <h4>{{  p.name  }}</h4>
+                        <h4>{{ p.name }}</h4>
                     </a>
                 </div>
             </div>
@@ -41,12 +42,9 @@ export default {
     data() {
         return {
             list_hambuguer: [],
-            nombre_recibido: ''
+            nameArticle: '',
+            imgArticle: [],
         };
-    },
-
-    props: {
-        nombre_recibido: ''
     },
 
     created() {
@@ -69,12 +67,14 @@ export default {
             {
                 name: 'PLATANO CERDO'
             },
-            
+
         ]
-        
+
     },
     mounted() {
-        console.log(this.nombre_recibido)
+        this.nameArticle = localStorage.getItem('name')
+        this.imgArticle = localStorage.getItem('image')
+        console.log(this.nameArticle, this.imgArticle)
     },
 
     methods: {
