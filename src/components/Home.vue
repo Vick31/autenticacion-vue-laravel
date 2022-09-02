@@ -48,9 +48,9 @@
         <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div :nombre_recibido="nombre_enviar">
-                <div class="empresa button" v-for="p in list_company" @click="insertar(p.name)">
+                <div class="empresa button" v-for="p in articles_list" @click="insertar(p.name)">
                     <a >
-                        <img :src="'../../img/comidas/' + p.img" alt="">
+                        <img :src="'../../img/comidas/' + p.image" alt="">
                         <h4>{{  p.name  }}</h4>
                     </a>
                 </div>
@@ -72,105 +72,74 @@ export default {
         return {
             list_company: [],
             recent_list: [],
+            articles_list: [],
             nombre_enviar: ''
         };
 
     },
     created() {
-        this.recent_list = [
-            {
-                img: 'img1.jpg',
-                name: 'Donde Igor'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'El negro'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'Food House'
-            },
-            {
-                img: 'img4.jpg',
-                name: 'Punto Rosa'
-            },
-        ]
+
         this.list_company = [
             {
                 img: 'img1.jpg',
-                name: 'Donde Igor'
             },
             {
                 img: 'img2.jpg',
-                name: 'El negro'
             },
             {
                 img: 'img3.jpg',
-                name: 'Food House'
             },
             {
                 img: 'img4.jpg',
-                name: 'Punto Rosa'
             },
             {
                 img: 'img1.jpg',
-                name: 'Adsi'
             },
             {
                 img: 'img2.jpg',
-                name: 'Donde Igor'
             },
             {
                 img: 'img3.jpg',
-                name: 'El negro'
             },
             {
                 img: 'img4.jpg',
-                name: 'Food House'
             },
             {
                 img: 'img1.jpg',
-                name: 'Punto Rosa'
             },
             {
                 img: 'img2.jpg',
-                name: 'Adsi'
             },
             {
                 img: 'img3.jpg',
-                name: 'Donde Igor'
             },
             {
                 img: 'img4.jpg',
-                name: 'El negro'
             },
             {
                 img: 'img1.jpg',
-                name: 'Food House'
             },
             {
                 img: 'img2.jpg',
-                name: 'Punto Rosa'
             },
             {
                 img: 'img3.jpg',
-                name: 'Adsi'
             },
         ]
 
     },
     mounted() {
-        this.get_token();
+        // this.get_token();
         this.index();
     },
 
     methods: {
-        async get_token() {
-            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        },
+        // async get_token() {
+        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        // },
         async index() {
-            let response = await axios.get("http://127.0.0.1:8000/api/product");
-            this.product_list = response.data;
+            let response = await axios.get("http://127.0.0.1:8000/api/articles");
+            this.articles_list = response.data.articles;
         },
         insertar(buscar) {
             let item = this.list_company.find(pro => pro.name == buscar)
