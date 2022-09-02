@@ -65,15 +65,14 @@
 
 <script>
 
-import SelectVue from './Select.vue';
-
 export default {
     data() {
         return {
             list_company: [],
             recent_list: [],
             articles_list: [],
-            nombre_enviar: ''
+            nombre_enviar:[],
+            item: []
         };
 
     },
@@ -142,13 +141,12 @@ export default {
             this.articles_list = response.data.articles;
         },
         insertar(buscar) {
-            let item = this.articles_list.find(pro => pro.name == buscar)
-            let encontrado = this.articles_list.find((pro) => pro.name == item.name)
-            if (encontrado != undefined) {
-                console.log(encontrado.name, encontrado.image)
+            this.item = this.articles_list.find(pro => pro.name == buscar)
+            if (buscar != undefined) {
+                console.log(this.item.name, this.item.image)
 
-                localStorage.setItem('name', encontrado.name)
-                localStorage.setItem('image', encontrado.image)
+                localStorage.setItem('name', this.item.name)
+                localStorage.setItem('image', this.item.image)
             }
             
         }
