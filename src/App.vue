@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
+        <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
             id="liveToastBtn">
             Login
           </button>
@@ -101,7 +101,7 @@
       </div>
     </div>
   </div>
-
+ <p v-if="message">{{ message }}</p>
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
@@ -140,7 +140,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.message)
-      this.message = this.$route.params.message
+      this.message = this.$route.params.message;
 
   },
 
@@ -162,7 +162,7 @@ export default {
         if (e.response.data.errors)
           this.errors = e.response.data.errors;
 
-        if (e.response.data.message)
+        else if (e.response.data.message)
           this.errors = e.response.data.message;
 
       }
