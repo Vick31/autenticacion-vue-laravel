@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar bg-light" id="barra">
     <div class="container-fluid">
-      <router-link to="/home">
+      <router-link to="/">
         <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top" style="cursor:pointer">
       </router-link>
 
@@ -23,12 +23,12 @@
         </div>
 
         <div class="container-link">
-          <router-link class=" btn-nav-link" to="/home">
+          <router-link class=" btn-nav-link" to="/">
             <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
               home
             </span>
           </router-link>
-          <router-link class="link text-nav-link" to="/home">
+          <router-link class="link text-nav-link" to="/">
             <p>Inicio</p>
           </router-link>
         </div>
