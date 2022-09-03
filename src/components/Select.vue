@@ -6,7 +6,7 @@
             <br>
             <h2>Elige tu comida</h2>
             <div>
-                <div class="empresa button" v-for="p in list_hambuguer">
+                <div class="empresa button" v-for="p in list_hambuguer" @click="buscar(p.name)">
                     <a href="Topings">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
@@ -43,6 +43,7 @@ export default {
             articles: {
                 name: '',
             },
+            
         };
     },
 
@@ -77,7 +78,15 @@ export default {
     },
 
     methods: {
+        insertar(buscar) {
+            let item = this.list_hambuguer.find(pro => pro.name == buscar)
+            if (buscar != undefined) {
+                console.log(item.name)
 
+                localStorage.setItem('type', item.name)
+            }
+            
+        }
     }
 }
 

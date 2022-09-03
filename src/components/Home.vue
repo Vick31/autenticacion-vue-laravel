@@ -92,10 +92,9 @@ export default {
         insertar(buscar) {
             let item = this.articles_list.find(pro => pro.name == buscar)
             if (buscar != undefined) {
-                console.log(item.name, item.image)
+                console.log(item.name)
 
                 localStorage.setItem('name', item.name)
-                localStorage.setItem('image', item.image)
             }
             
         }
