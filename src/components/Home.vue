@@ -48,10 +48,10 @@
         <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div :nombre_recibido="nombre_enviar">
-                <div class="empresa button" v-for="p in articles_list" @click="insertar(p.name)">
+                <div class="empresa button" v-for="articles in articles_list" @click="insertar(articles.name)">
                     <a href="Select">
-                        <img :src="'../../img/comidas/' + p.img" alt="">
-                        <h4>{{  p.name  }}</h4>
+                        <img :src="articles.image" alt="">
+                        <h4>{{  articles.name  }}</h4>
                     </a>
                 </div>
             </div>

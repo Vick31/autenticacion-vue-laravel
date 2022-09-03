@@ -2,7 +2,7 @@
 
     <div class="container_empresa">
         <div>
-            <h4 v-for="p in article"> {{p}} </h4>
+            <h4 v-for="article in articles"> {{ article }} </h4>
             <br>
             <h2>Elige tu comida</h2>
             <div>
@@ -40,15 +40,12 @@ export default {
     data() {
         return {
             list_hambuguer: [],
-            article: {
+            articles: {
                 name: '',
             },
         };
     },
 
-    props: {
-        nombre_recibido: ''
-    },
 
     created() {
         this.list_hambuguer = [
@@ -75,8 +72,8 @@ export default {
         
     },
     mounted() {
-        this.article.name = localStorage.getItem('name')
-        console.log(this.article.name)  
+        this.articles.name = localStorage.getItem('name')
+        console.log(this.articles.name)  
     },
 
     methods: {
