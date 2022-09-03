@@ -48,7 +48,7 @@
         <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div :nombre_recibido="nombre_enviar">
-                <div class="empresa button" v-for="p in list_company" @click="insertar(p.name)">
+                <div class="empresa button" v-for="p in list_company">
                     <a >
                         <img :src="'../../img/comidas/' + p.img" alt="">
                         <h4>{{  p.name  }}</h4>
@@ -172,15 +172,6 @@ export default {
             let response = await axios.get("http://127.0.0.1:8000/api/product");
             this.product_list = response.data;
         },
-        insertar(buscar) {
-            let item = this.list_company.find(pro => pro.name == buscar)
-            let encontrado = this.list_company.find((pro) => pro.name == item.name)
-            if (encontrado == undefined) {
-                this.nombre_enviar = item
-                console.log(item)
-            }
-            
-        }
     }
 }
 </script>

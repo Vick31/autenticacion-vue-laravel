@@ -74,7 +74,7 @@ export default {
         
     },
     mounted() {
-        console.log(this.nombre_recibido)
+        
     },
 
     methods: {
