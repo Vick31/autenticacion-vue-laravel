@@ -37,10 +37,10 @@
         <div class="container_empresas">
             <h2>Vistados recientemente</h2>
             <div>
-                <div class="empresa button" v-for="p in recent_list" @click="insertar(p.name)">
+                <div class="empresa button">
                     <a href="Select">
-                        <img :src="'../../img/comidas/' + p.img" alt="">
-                        <h4>{{  p.name  }}</h4>
+                        <!-- <img :src="'../../img/comidas/' + p.img" alt="">
+                        <h4>{{  p.name  }}</h4> -->
                     </a>
                 </div>
             </div>
@@ -48,8 +48,8 @@
         <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div :nombre_recibido="nombre_enviar">
-                <div class="empresa button" v-for="p in list_company">
-                    <a >
+                <div class="empresa button" v-for="p in articles_list" @click="insertar(p.name)">
+                    <a href="Select">
                         <img :src="'../../img/comidas/' + p.img" alt="">
                         <h4>{{  p.name  }}</h4>
                     </a>
@@ -65,113 +65,40 @@
 
 <script>
 
-import SelectVue from './Select.vue';
-
 export default {
     data() {
         return {
-            list_company: [],
-            recent_list: [],
-            nombre_enviar: ''
+            articles_list: [],
         };
 
     },
     created() {
-        this.recent_list = [
-            {
-                img: 'img1.jpg',
-                name: 'Donde Igor'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'El negro'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'Food House'
-            },
-            {
-                img: 'img4.jpg',
-                name: 'Punto Rosa'
-            },
-        ]
-        this.list_company = [
-            {
-                img: 'img1.jpg',
-                name: 'Donde Igor'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'El negro'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'Food House'
-            },
-            {
-                img: 'img4.jpg',
-                name: 'Punto Rosa'
-            },
-            {
-                img: 'img1.jpg',
-                name: 'Adsi'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'Donde Igor'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'El negro'
-            },
-            {
-                img: 'img4.jpg',
-                name: 'Food House'
-            },
-            {
-                img: 'img1.jpg',
-                name: 'Punto Rosa'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'Adsi'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'Donde Igor'
-            },
-            {
-                img: 'img4.jpg',
-                name: 'El negro'
-            },
-            {
-                img: 'img1.jpg',
-                name: 'Food House'
-            },
-            {
-                img: 'img2.jpg',
-                name: 'Punto Rosa'
-            },
-            {
-                img: 'img3.jpg',
-                name: 'Adsi'
-            },
-        ]
+
 
     },
     mounted() {
-        this.get_token();
+        // this.get_token();
         this.index();
     },
 
     methods: {
-        async get_token() {
-            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        },
+        // async get_token() {
+        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        // },
         async index() {
-            let response = await axios.get("http://127.0.0.1:8000/api/product");
-            this.product_list = response.data;
+            let response = await axios.get("http://127.0.0.1:8000/api/articles");
+            this.articles_list = response.data.articles;
         },
+        insertar(buscar) {
+            let item = this.articles_list.find(pro => pro.name == buscar)
+            if (buscar != undefined) {
+                console.log(item.name, item.image)
+
+                localStorage.setItem('name', item.name)
+                localStorage.setItem('image', item.image)
+            }
+            
+        }
     }
 }
 </script>

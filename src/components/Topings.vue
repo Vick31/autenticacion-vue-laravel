@@ -20,6 +20,9 @@ export default {
         return {
             list_tipo: [],
             list_toping: [],
+            article: {
+                name: ''                
+            },
         };
 
     },
@@ -29,20 +32,20 @@ export default {
                 name: "Donde Igor",
                 img: "img1.jpg"
             }
-
         ]
-
-
     },
     mounted() {
-        this.get_token();
+        // this.get_token();
+
+        this.article.name = localStorage.getItem('name')
+        console.log(this.article.name)
         this.index();
     },
 
     methods: {
-        async get_token() {
-            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        },
+        // async get_token() {
+        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        // },
         async index() {
             let response = await axios.get("http://127.0.0.1:8000/api/product");
             this.product_list = response.data;

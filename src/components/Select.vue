@@ -2,10 +2,9 @@
 
     <div class="container_empresa">
         <div>
-            <p> {{ nombre_recibido }} </p>
-            <h2>
-                Elige tu comida
-            </h2>
+            <h4 v-for="p in article"> {{p}} </h4>
+            <br>
+            <h2>Elige tu comida</h2>
             <div>
                 <div class="empresa button" v-for="p in list_hambuguer">
                     <a href="Topings">
@@ -41,7 +40,9 @@ export default {
     data() {
         return {
             list_hambuguer: [],
-            nombre_recibido: ''
+            article: {
+                name: '',
+            },
         };
     },
 
@@ -74,7 +75,8 @@ export default {
         
     },
     mounted() {
-        
+        this.article.name = localStorage.getItem('name')
+        console.log(this.article.name)  
     },
 
     methods: {
