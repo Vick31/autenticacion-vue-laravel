@@ -1,12 +1,8 @@
 <template>
     <div class="Container_div">
         <div v-for="p in list_tipo" class="contenedor">
-            <div class="title-toping">
-                <!-- <span v-model="nameArticle.name"></span> -->
-                
-                <!-- <h4 > {{p}} </h4> -->
-            </div>
             <img :src="'../../img/comidas/' + p.img" alt="">
+            <h1> {{ p.name }} </h1>
         </div>
     </div>
 
@@ -24,10 +20,6 @@ export default {
         return {
             list_tipo: [],
             list_toping: [],
-            article: {
-                name: ''
-                
-            },
         };
 
     },
@@ -35,7 +27,7 @@ export default {
         this.list_tipo = [
             {
                 name: "Donde Igor",
-                img: "1.jpg"
+                img: "img1.jpg"
             }
 
         ]
@@ -43,19 +35,14 @@ export default {
 
     },
     mounted() {
-        // this.get_token();
-
-        this.article.name = localStorage.getItem('name')
-        console.log(this.article.name)
-
-
+        this.get_token();
         this.index();
     },
 
     methods: {
-        // async get_token() {
-        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        // },
+        async get_token() {
+            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        },
         async index() {
             let response = await axios.get("http://127.0.0.1:8000/api/product");
             this.product_list = response.data;

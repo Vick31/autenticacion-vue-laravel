@@ -20,7 +20,6 @@
         <label for="floatingInput">Contraseña</label>
         <span v-if="errors.password">{{ errors.password[0] }} </span>
       </div>
-
       <div class="form-floating pb-3">
 
         <input type="password" class="form-control" name=" password_confirmation"
@@ -44,42 +43,49 @@
 </style>
 
 <script>
+
 export default {
   data() {
     return {
-      message: null,
+      message: '',
       form: {
         name: "",
         email: "",
         password: "",
         password_confirmation: "",
-        token: null,
       },
       errors: {},
     };
+  },
+  mounted() {
   },
 
   methods: {
     async register_user() {
       try {
         const rs = await this.axios.post("/api/register", this.form);
-        this.$router.push({
-          name: "Home",
-          // params: {
-          //   token: rs.data.token,
-          // },
-        });
-        localStorage.token = rs.data.token;
-      } catch (e) {
-        this.errors = {};
-        this.message = null;
 
-        if (e.response.data.errors) this.errors = e.response.data.errors;
-        else if (e.response.data.message)
-          this.message = e.response.data.message;
+        this.$router.push({
+          name: 'Home',
+          params: { message: rs.data.message, },
+
+        });
       }
+      catch (e) {
+
+        this.errors = {},
+          this.message = null;
+
+        if (e.response.data.errors)
+          this.errors = e.response.data.errors;
+
+        if (e.response.data.message)
+          this.errors = e.response.data.message;
+
+        console.log(e)
+      }
+
     },
   },
 };
 </script>
-

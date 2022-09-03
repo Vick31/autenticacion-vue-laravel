@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar bg-light" id="barra">
     <div class="container-fluid">
-      <router-link to="/">
+      <router-link to="/home">
         <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top" style="cursor:pointer">
       </router-link>
 
@@ -23,12 +23,12 @@
         </div>
 
         <div class="container-link">
-          <router-link class=" btn-nav-link" to="/">
+          <router-link class=" btn-nav-link" to="/home">
             <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
               home
             </span>
           </router-link>
-          <router-link class="link text-nav-link" to="/">
+          <router-link class="link text-nav-link" to="/home">
             <p>Inicio</p>
           </router-link>
         </div>
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="modal-footer">
-        <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
+          <button type="button" @click="login()" data-bs-dismiss="modal" class="btn btn-primary btn-login"
             id="liveToastBtn">
             Login
           </button>
@@ -101,7 +101,7 @@
       </div>
     </div>
   </div>
- <p v-if="message">{{ message }}</p>
+
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
@@ -140,7 +140,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.message)
-      this.message = this.$route.params.message;
+      this.message = this.$route.params.message
 
   },
 
@@ -162,7 +162,7 @@ export default {
         if (e.response.data.errors)
           this.errors = e.response.data.errors;
 
-        else if (e.response.data.message)
+        if (e.response.data.message)
           this.errors = e.response.data.message;
 
       }
