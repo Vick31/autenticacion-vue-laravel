@@ -65,7 +65,7 @@ export default {
     methods: {
         async change_password() {
             try {
-                const rs = await this.axios.post("/api/reset-password", this.form);
+                const rs = await this.axios .post("/api/reset-password", this.form);
 
                 this.$router.push({
                     name: 'Home',
