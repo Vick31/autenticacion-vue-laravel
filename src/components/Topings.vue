@@ -3,6 +3,7 @@
         <div v-for="p in list_tipo" class="contenedor">
             <img :src="'../../img/comidas/' + p.img" alt="">
             <h1> {{ p.name }} </h1>
+            <h4>{{p.id}}</h4>
         </div>
     </div>
 
@@ -27,23 +28,17 @@ export default {
        
     },
     mounted() {
-        
+        this.index();
     },
 
     methods: {
 
         async index() {
-            try {
-                let response = await axios.post(`http://127.0.0.1:8000/api/ingrediente`);
-                this.list_tipo = response.data.ingredientes
-                
-
-            } catch (e) {
-                console.log(e)
-            };
-            console.log(this.list_tipo)
-
-        },
+            
+                let response = await axios.get(`http://127.0.0.1:8000/api/ingrediente`);
+                this.list_tipo = response.data.ingrediente   
+                console.log(response.data.ingredientes)
+                },
         insertar(buscar) {
             let item = this.list_hambuguer.find(pro => pro.name == buscar)
             if (buscar != undefined) {
