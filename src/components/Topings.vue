@@ -18,45 +18,41 @@
 export default {
     data() {
         return {
-            list_tipo: [],
-            list_toping: [],
-            article: {
-                name: '',                
-                type: ''
-            },
-            tipo_hamburger: {
-                name: '',
-            }
+            list_tipo: [],           
+            
         };
 
     },
     created() {
-        this.list_tipo = [
-            {
-                name: "Donde Igor",
-                img: "img1.jpg"
-            }
-        ]
+       
     },
     mounted() {
-        // this.get_token();
-
-        this.article.name = localStorage.getItem('name')
-        this.article.type = localStorage.getItem('type')
         
-        console.log(this.article.name, this.article.type)
-
-        // this.index();
     },
 
     methods: {
-        // async get_token() {
-        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        // },
-        // async index() {
-        //     let response = await axios.get("http://127.0.0.1:8000/api/product");
-        //     this.product_list = response.data;
-        // },
+
+        async index() {
+            try {
+                let response = await axios.post(`http://127.0.0.1:8000/api/ingrediente`);
+                this.list_tipo = response.data.ingredientes
+                
+
+            } catch (e) {
+                console.log(e)
+            };
+            console.log(this.list_tipo)
+
+        },
+        insertar(buscar) {
+            let item = this.list_hambuguer.find(pro => pro.name == buscar)
+            if (buscar != undefined) {
+                // console.log(item.name)
+
+                
+            }
+
+        }
     }
 }
 </script>
