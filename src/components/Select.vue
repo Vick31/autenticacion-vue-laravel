@@ -2,7 +2,7 @@
 
     <div class="container_empresa">
         <div>
-            <h4 v-for="article in articles"> {{ article }} </h4>
+            <h4> {{ company.name }} </h4>
             <br>
             <h2>Elige tu comida</h2>
             <div>
@@ -10,7 +10,9 @@
                     <a href="Topings">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
-                        <h4>{{  p.name  }}</h4>
+                        <h4>{{ p.name }}</h4>
+                        <h4>${{ p.price }} COP</h4>
+
                     </a>
                 </div>
             </div>
@@ -34,58 +36,52 @@
 
 
 <script>
+import { ssrContextKey } from 'vue';
+
 
 
 export default {
     data() {
         return {
             list_hambuguer: [],
-            articles: {
+            company: {
                 name: '',
+                image: '',
+                id: '',
             },
-            
         };
     },
 
 
     created() {
-        this.list_hambuguer = [
-            {
-                name: 'PAN RES'
-            },
-            {
-                name: 'PLATANO RES'
-            },
-            {
-                name: 'PAN POLLO'
-            },
-            {
-                name: 'PLATANO POLLO'
-            },
-            {
-                name: 'PAN CERDO'
-            },
-            {
-                name: 'PLATANO CERDO'
-            },
-            
-        ]
-        
+
     },
     mounted() {
-        this.articles.name = localStorage.getItem('name')
-        console.log(this.articles.name)  
+        this.company = JSON.parse(localStorage.getItem('company')); //JSON.parse convierte un string en objeto
+        console.log(this.company)
+        this.index();
     },
 
     methods: {
+
+        async index() {
+            try {
+                let response = await axios.post(`http://127.0.0.1:8000/api/company-articles/${this.company.id}`);
+                this.list_hambuguer = response.data.article_list
+
+            } catch (e) {
+                console.log(e)
+            };
+
+        },
         insertar(buscar) {
             let item = this.list_hambuguer.find(pro => pro.name == buscar)
             if (buscar != undefined) {
-                console.log(item.name)
+                // console.log(item.name)
 
                 localStorage.setItem('type', item.name)
             }
-            
+
         }
     }
 }
