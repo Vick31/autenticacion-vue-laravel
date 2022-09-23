@@ -1,14 +1,6 @@
 .container_empresa {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-flow: column;
 }
 
 .container_empresa div {
@@ -51,4 +43,49 @@
   width: 7em;
   height: 7em;
 }
+.company {
+  display: flex;
+  flex-flow: column;
+}
+.mapas {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maps {
+  width: 600px;
+  height: 350px;
+}
+
+
+@media (max-width:1366px) {
+  .container_empresa {
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .maps {
+    height: 250px;
+  }
+}
+
+@media (max-width:600px) {
+  .maps {
+    width: 100vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 /*# sourceMappingURL=styleSelect.css.map */

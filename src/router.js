@@ -21,7 +21,10 @@ const routes = [
     {
         path: "/register",
         name: "Register",
-        component: Register,
+        components: { 
+            default: Register,
+            navbar: Nav,
+        }
     },
     {
         path: "/account",

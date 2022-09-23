@@ -1,55 +1,38 @@
 <template>
-    <nav class="navbar bg-light" id="barra">
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <router-link to="/">
                 <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top"
                     style="cursor:pointer">
             </router-link>
-
-            <h1 id="title-nav" style="cursor:pointer">ComidApp</h1>
-
-            <div class="icons_login">
-                <div class="container-link">
-                    <div>
-                        <span @click="mostrar_btn()" class="material-symbols-outlined btn-nav-link link-btn"
-                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            logout
-                        </span>
-                    </div>
-                    <div>
-                        <p class="link text-nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Iniciar sesion
-                        </p>
-                    </div>
-                </div>
-
-                <div class="container-link">
-                    <router-link class=" btn-nav-link" to="/">
-                        <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
-                            home
-                        </span>
-                    </router-link>
-                    <router-link class="link text-nav-link" to="/">
-                        <p>Inicio</p>
-                    </router-link>
-                </div>
-
-                <div class="container-link">
-                    <router-link class="btn-nav-link" to="/register">
-                        <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
-                            how_to_reg
-                        </span>
-                    </router-link>
-                    <router-link class="link text-nav-link" to="/register">
-                        <p>Registrarse</p>
-                    </router-link>
-                </div>
-
-                <span class="material-symbols-outlined" id="btn-menu" @click="mostrar_links()">menu</span>
-
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <router-link class="nav-link active" to="/">
+                            <a class="nav-link active">Inicio</a>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link active" to="">
+                            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Iniciar sesion</a>
+                        </router-link>  
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link active" to="/register">
+                            <a class="nav-link active">Registrarse</a>
+                        </router-link>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
-
-            <router-link v-if="this.$route.path == '/account'" class="link" to="/account">Tu cuenta</router-link>
         </div>
     </nav>
 </template>
@@ -100,33 +83,8 @@ export default {
             }
 
         },
-        mostrar_links() {
-            let a = document.getElementsByClassName('btn-nav-link')
-            for (let i = 0; i < a.length; i++) {
-                a[i].style.transform = 'translatex(1em)'
-            }
-
-            document.getElementById('btn-menu').style.transform = 'scale(0)'
-        },
-        mostrar_btn() {
-            let a = document.getElementsByClassName('btn-nav-link')
-            for (let i = 0; i < a.length; i++) {
-                a[i].style.transform = 'translate(12em)'
-            }
-
-            document.getElementById('btn-menu').style.transform = 'scale(1)'
-        }
     },
 };
 
-const toastTrigger = document.getElementById('liveToastBtn')
-const toastLiveExample = document.getElementById('liveToast')
-if (toastTrigger) {
-    toastTrigger.addEventListener('click', () => {
-        const toast = new bootstrap.Toast(toastLiveExample)
-
-        toast.show()
-    })
-}
 
 </script>
