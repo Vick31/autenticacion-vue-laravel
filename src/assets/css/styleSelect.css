@@ -50,7 +50,7 @@
 .mapas {
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -67,14 +67,34 @@
     align-items: center;
   }
 
+  .mapas {
+    display: flex;
+    justify-content: center;
+  }
+
   .maps {
     height: 250px;
+  }
+
+  .company {
+    display: block;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-around;
   }
 }
 
 @media (max-width:600px) {
   .maps {
     width: 100vw;
+  }
+  .company {
+    display: block;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
