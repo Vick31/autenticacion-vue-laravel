@@ -43,8 +43,6 @@ export default {
             let item = this.list_hambuguer.find(pro => pro.name == buscar)
             if (buscar != undefined) {
                 // console.log(item.name)
-
-                
             }
 
         }

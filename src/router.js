@@ -6,13 +6,16 @@ import ForgotPassword from "./components/ForgotPassword.vue";
 import ResetPassword from "./components/ResetPassword.vue";
 import Select from "./components/Select.vue"
 import Topings from "./components/Topings.vue"
-
+import Nav from "./components/Nav.vue"
 
 const routes = [
     {
         path: "/",
         name: "Home",
-        component: Home,
+        components: {
+            default: Home,
+            navbar: Nav,
+        },
 
     },
     {
@@ -36,14 +39,20 @@ const routes = [
         component: ResetPassword,
     },
     {
-        path: "/Select",
+        path: "/select",
         name: "Select",
-        component: Select,
+        components: { 
+            default: Select,
+            navbar: Nav,
+        },
     },
     {
-        path: "/Topings",
+        path: "/select/topings",
         name: "Topings",
-        component: Topings,
+        components: { 
+            default: Topings,
+            navbar: Nav,
+        },
     },
 ];
 

@@ -1,56 +1,5 @@
 <template>
-  <nav class="navbar bg-light" id="barra">
-    <div class="container-fluid">
-      <router-link to="/">
-        <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top" style="cursor:pointer">
-      </router-link>
-
-      <h1 id="title-nav" style="cursor:pointer">ComidApp</h1>
-
-      <div class="icons_login">
-        <div class="container-link">
-          <div>
-            <span @click="mostrar_btn()" class="material-symbols-outlined btn-nav-link link-btn" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">
-              logout
-            </span>
-          </div>
-          <div>
-            <p class="link text-nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Iniciar sesion
-            </p>
-          </div>
-        </div>
-
-        <div class="container-link">
-          <router-link class=" btn-nav-link" to="/">
-            <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
-              home
-            </span>
-          </router-link>
-          <router-link class="link text-nav-link" to="/">
-            <p>Inicio</p>
-          </router-link>
-        </div>
-
-        <div class="container-link">
-          <router-link class="btn-nav-link" to="/register">
-            <span @click="mostrar_btn()" class="link-btn material-symbols-outlined">
-              how_to_reg
-            </span>
-          </router-link>
-          <router-link class="link text-nav-link" to="/register">
-            <p>Registrarse</p>
-          </router-link>
-        </div>
-
-        <span class="material-symbols-outlined" id="btn-menu" @click="mostrar_links()">menu</span>
-
-      </div>
-
-      <router-link v-if="this.$route.path == '/account'" class="link" to="/account">Tu cuenta</router-link>
-    </div>
-  </nav>
+  <router-view name="navbar"></router-view>
   <br><br>
   <div class="container">
     <router-view>
@@ -162,7 +111,7 @@ export default {
         if (e.response.data.errors)
           this.errors = e.response.data.errors;
 
-        if (e.response.data.message)
+        else if (e.response.data.message)
           this.errors = e.response.data.message;
 
       }

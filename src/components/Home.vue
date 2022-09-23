@@ -38,10 +38,7 @@
             <h2>Vistados recientemente</h2>
             <div>
                 <div class="empresa button">
-                    <a href="Select">
-                        <!-- <img :src="'../../img/comidas/' + p.img" alt="">
-                        <h4>{{  p.name  }}</h4> -->
-                    </a>
+                    <router-link to="/select"></router-link>
                 </div>
             </div>
         </div>
@@ -49,10 +46,10 @@
             <h2>Prueba algo nuevo</h2>
             <div>
                 <div class="empresa button" v-for="companies in companies_list" @click="insertar(companies.name)">
-                    <a href="Select">
+                    <router-link to="/select">
                         <img :src="companies.logo" alt="">
-                        <h4>{{  companies.name  }}</h4>
-                    </a>
+                        <h4>{{ companies.name }}</h4>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -95,12 +92,12 @@ export default {
 
                 let company = {
                     'id': item.id,
-                    'name' : item.name,    
+                    'name': item.name,
                 };
 
                 localStorage.setItem('company', JSON.stringify(company)); //JSON.stringigy convierte un objeto a string
             }
-            
+
         }
     }
 }

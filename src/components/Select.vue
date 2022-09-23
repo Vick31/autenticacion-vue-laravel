@@ -7,13 +7,13 @@
             <h2>Elige tu comida</h2>
             <div>
                 <div class="empresa button" v-for="p in list_hambuguer" @click="buscar(p.name)">
-                    <a href="Topings">
+                    <router-link to="/select/topings">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
                         <h4>{{ p.name }}</h4>
                         <h4>${{ p.price }} COP</h4>
 
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
