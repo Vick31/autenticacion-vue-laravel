@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-light" style="padding: 0; margin: 0;">
-        <div class="container-fluid" style="background-color: #f9a825;">
+        <div class="container-fluid">
             <router-link to="/">
                 <img  src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top"
                     style="cursor:pointer">
