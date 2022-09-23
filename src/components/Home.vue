@@ -46,7 +46,7 @@
             <h2>Prueba algo nuevo</h2>
             <div>
                 <div class="empresa button" v-for="companies in companies_list" @click="insertar(companies.name)">
-                    <router-link to="/select">
+                    <router-link to="/select">  
                         <img :src="companies.logo" alt="">
                         <h4>{{ companies.name }}</h4>
                     </router-link>

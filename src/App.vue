@@ -1,9 +1,13 @@
 <template>
-  <router-view name="navbar"></router-view>
-  <br><br>
-  <div class="container">
-    <router-view>
-    </router-view>
+  <div>
+    <router-view name="navbar"></router-view>
+    <br><br>
+    <div class="container-section">
+      <div class="section">
+        <router-view>
+        </router-view>
+      </div>
+    </div>
   </div>
 
   <!-- Modal -->

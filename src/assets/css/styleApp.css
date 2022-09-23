@@ -155,8 +155,8 @@
   }
 }
 
-.container {
-  margin: none !important;
+.container-section {
+  margin: auto !important;
   padding: none !important;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,5 +171,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 1440px;
+  height: calc(100vh - 10.3rem);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  overflow-y: auto;
 }
 /*# sourceMappingURL=styleApp.css.map */
