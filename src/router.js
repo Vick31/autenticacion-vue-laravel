@@ -5,7 +5,6 @@ import Home from "./components/Home.vue";
 import ForgotPassword from "./components/ForgotPassword.vue";
 import ResetPassword from "./components/ResetPassword.vue";
 import Select from "./components/Select.vue"
-import Topings from "./components/Topings.vue"
 import Nav from "./components/Nav.vue"
 
 const routes = [
@@ -46,14 +45,6 @@ const routes = [
         name: "Select",
         components: { 
             default: Select,
-            navbar: Nav,
-        },
-    },
-    {
-        path: "/select/topings",
-        name: "Topings",
-        components: { 
-            default: Topings,
             navbar: Nav,
         },
     },
