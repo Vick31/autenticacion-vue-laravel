@@ -58,7 +58,11 @@
   width: 600px;
   height: 350px;
 }
-
+.modal-body div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
 
 @media (max-width:1366px) {
   .container_empresa {

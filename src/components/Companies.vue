@@ -35,10 +35,17 @@
     </div>
     <div class="container_empresa">
         <div class="container_empresas">
+            <h2>Vistados recientemente</h2>
+            <div>
+                <div class="empresa button">
+                </div>
+            </div>
+        </div>
+        <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div>
-                <div class="empresa button" v-for="companies in articles_list" @click="insertar(companies.name)">
-                    <router-link to="/companies/select">
+                <div class="empresa button" v-for="companies in companies_list" @click="insertar(companies.name)">
+                    <router-link to="/companies/select">  
                         <img :src="companies.logo" alt="">
                         <h4>{{ companies.name }}</h4>
                     </router-link>
@@ -57,7 +64,7 @@
 export default {
     data() {
         return {
-            articles_list: [],
+            companies_list: [],
         };
 
     },
@@ -75,11 +82,11 @@ export default {
         //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
         // },
         async index() {
-            let response = await axios.get("http://127.0.0.1:8000/api/articles");
-            this.articles_list = response.data.articles;
+            let response = await axios.get("http://127.0.0.1:8000/api/companies");
+            this.companies_list = response.data.companies;
         },
         insertar(buscar) {
-            let item = this.articles_list.find(pro => pro.name == buscar)
+            let item = this.companies_list.find(pro => pro.name == buscar)
             if (buscar != undefined) {
 
                 let company = {

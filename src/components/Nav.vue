@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-light" style="padding: 0; margin: 0;">
         <div class="container-fluid">
             <router-link to="/">
-                <img  src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top"
+                <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top"
                     style="cursor:pointer">
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -19,8 +19,9 @@
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link active" to="">
-                            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Iniciar sesion</a>
-                        </router-link>  
+                            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Iniciar
+                                sesion</a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link active" to="/register">
@@ -28,13 +29,18 @@
                         </router-link>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Revisar compra
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    
 </template>
 
 <style scoped>

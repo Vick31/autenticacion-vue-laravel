@@ -1,6 +1,7 @@
 <template>
 
     <div class="container_empresa">
+        
         <div class="mapas">
             <div>
                 <iframe class="maps"
@@ -16,13 +17,38 @@
             <br>
             <h2>Elige tu comida</h2>
             <div>
-                <div class="empresa button" v-for="p in list_hambuguer" @click="buscar(p.name)">
+                <div class="empresa button" v-for="p in list_hambuguer" @click="insertar(p.name)">
                     <div class="card">
                         <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
                         <h4>{{ p.name }}</h4>
                         <h4>${{ p.price }} COP</h4>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div v-for="item in fatura" class="modal-body" >
+                    <div>
+                        <small>
+                            <b>{{ item.name }}</b>
+                        </small>
+                        <small>
+                           $ {{item.price}} COP
+                        </small> 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -42,6 +68,7 @@ export default {
     data() {
         return {
             list_hambuguer: [],
+            fatura: [],
             company: {
                 name: '',
                 image: '',
@@ -75,8 +102,8 @@ export default {
         insertar(buscar) {
             let item = this.list_hambuguer.find(pro => pro.name == buscar)
             if (buscar != undefined) {
-                // console.log(item.name)
-
+                console.log(item)
+                this.fatura.push(item)
                 localStorage.setItem('type', item.name)
             }
 
