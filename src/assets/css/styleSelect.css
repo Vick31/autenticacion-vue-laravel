@@ -1,115 +1,81 @@
 .container_empresa {
-  display: flex;
-  flex-flow: column;
+
+  max-width: 1250px;
+  display: grid;
+  grid-template-rows: 12rem auto;
+  margin: 0 auto;
+
 }
 
-.container_empresa div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.container_empresa div h2 {
-  margin: 1em;
-}
-
-.container_empresa div div .empresa a {
-  width: 11em;
-  height: 11em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-decoration: none !important;
-  color: black;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.container_empresa div div .empresa img {
-  border-radius: 100%;
-  width: 7em;
-  height: 7em;
-}
-.company {
-  display: flex;
-  flex-flow: column;
-}
 .mapas {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.maps {
-  width: 600px;
-  height: 350px;
-}
-.modal-body div {
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   justify-content: space-between;
+  gap: 2rem;
+
 }
 
-@media (max-width:1366px) {
-  .container_empresa {
-    display:flex;
-    flex-flow: column;
-    align-items: center;
-  }
-
-  .mapas {
-    display: flex;
-    justify-content: center;
-  }
-
-  .maps {
-    height: 250px;
-  }
-
-  .company {
-    display: block;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    justify-content: space-around;
-  }
+.mapas .maps {
+  width: 30rem;
+  height: 10rem;
 }
 
-@media (max-width:600px) {
-  .maps {
-    width: 100vw;
-  }
-  .company {
-    display: block;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    justify-content: space-between;
-  }
+.mapas .description-company {
+  max-width: 20rem;
+}
+
+.container-products {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+.products {
+
+  display: grid;
+  grid-auto-rows: 20rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 2rem;
+
+}
+
+.empresa {
+
+  box-shadow: 1px 1px 5px #ABB2B9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 0.5rem;
+  min-width: 15rem;
+  height: 8rem;
+  border-radius: 15px;
 }
 
 
+.div-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 11rem;
+  width: 100%;
+  border-radius: 15px;
+}
 
-
-
-
-
-
-
-
-
-/*# sourceMappingURL=styleSelect.css.map */
+.links {
+  text-decoration: none;
+  color: black;
+}
