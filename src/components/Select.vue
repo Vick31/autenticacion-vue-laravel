@@ -19,7 +19,7 @@
             <div>
                 <div class="empresa button" v-for="p in list_hambuguer" @click="insertar(p.name)">
                     <div class="card">
-                        <router-link to="/companies/select/topings">
+                        <router-link to="/select/topings">
                             <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
                             alt="">
                         <h4>{{ p.name }}</h4>

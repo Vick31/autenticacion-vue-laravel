@@ -20,15 +20,6 @@ const routes = [
 
     },
     {
-        path: "/companies",
-        name: "Company",
-        components: {
-            default: Companies,
-            navbar: Nav,
-        },
-
-    },
-    {
         path: "/register",
         name: "Register",
         components: { 
@@ -52,7 +43,7 @@ const routes = [
         component: ResetPassword,
     },
     {
-        path: "/companies/select",
+        path: "/select",
         name: "Select",
         components: { 
             default: Select,
@@ -60,7 +51,7 @@ const routes = [
         },
     },
     {
-        path: "/companies/select/topings",
+        path: "select/topings",
         name: Topings,
         components: {
             default: Topings,

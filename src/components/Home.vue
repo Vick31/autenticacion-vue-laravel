@@ -38,7 +38,7 @@
             <h2>Prueba algo nuevo</h2>
             <div class="container-companies">
                 <div class="empresa button" v-for="companies in articles_list" @click="insertar(companies.name)">
-                    <router-link to="/companies/select">
+                    <router-link to="/select">
                         <img :src="companies.logo" alt="">
                         <h4>{{ companies.name }}</h4>
                     </router-link>
@@ -74,11 +74,15 @@ export default {
         // async get_token() {
         //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
         // },
+
         async index() {
             let response = await axios.get("http://127.0.0.1:8000/api/articles");
             this.articles_list = response.data.articles;
         },
+
         insertar(buscar) {
+            localStorage.clear()
+
             let item = this.articles_list.find(pro => pro.name == buscar)
             if (buscar != undefined) {
 
