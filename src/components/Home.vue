@@ -74,12 +74,10 @@ export default {
         // async get_token() {
         //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
         // },
-
         async index() {
-            let response = await axios.get("http://127.0.0.1:8000/api/articles");
-            this.articles_list = response.data.articles;
+            let response = await axios.get("http://127.0.0.1:8000/api/companies");
+            this.articles_list = response.data.companies;
         },
-
         insertar(buscar) {
             localStorage.clear()
 
