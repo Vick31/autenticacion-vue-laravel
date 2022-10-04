@@ -7,6 +7,7 @@ import ResetPassword from "./components/ResetPassword.vue";
 import Select from "./components/Select.vue"
 import Nav from "./components/Nav.vue"
 import Companies from "./components/companies.vue"
+import Topings from "./components/Topings"
 
 const routes = [
     {
@@ -24,7 +25,6 @@ const routes = [
         components: {
             default: Companies,
             navbar: Nav,
-            aside: Aside,
         },
 
     },
@@ -57,9 +57,16 @@ const routes = [
         components: { 
             default: Select,
             navbar: Nav,
-            aside: Aside,
         },
     },
+    {
+        path: "/companies/select/topings",
+        name: Topings,
+        components: {
+            default: Topings,
+            navbar: Nav
+        }
+    }
 ];
 
 const _router = createRouter({
