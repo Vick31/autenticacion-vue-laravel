@@ -6,7 +6,6 @@ import ForgotPassword from "./components/ForgotPassword.vue";
 import ResetPassword from "./components/ResetPassword.vue";
 import Select from "./components/Select.vue"
 import Nav from "./components/Nav.vue"
-import Aside from "./components/Aside.vue"
 import Companies from "./components/companies.vue"
 
 const routes = [
