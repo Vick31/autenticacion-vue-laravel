@@ -51,7 +51,7 @@ const routes = [
         },
     },
     {
-        path: "select/topings",
+        path: "/select/topings",
         name: Topings,
         components: {
             default: Topings,
