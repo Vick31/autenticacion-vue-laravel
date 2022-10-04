@@ -1,54 +1,41 @@
 @font-face {
-  font-family: font-unique;
-  src: url(fonts/ProductSansBold.ttf);
+    font-family: font-unique;
+    src: url(fonts/ProductSansBold.ttf);
 }
 
 @font-face {
-  font-family: font-app;
-  src: url(fonts/Appetite.ttf);
+    font-family: font-app;
+    src: url(fonts/Appetite.ttf);
 }
+
+/* color
+
+  #f9a825
+
+*/
 
 * {
-  -webkit-transition: 300ms all ease;
-  transition: 300ms all ease;
+    -webkit-transition: 300ms all ease;
+    transition: 300ms all ease;
 }
 
-.modal-title {
-  font-family: font-app !important;
-}
-
-.modal-header {
-  background-color: #f9a825 !important;
-}
-
-.olvi {
-  font-family: font-app !important;
-}
-
-.contra {
-  color: #f9a825 !important;
-  text-decoration: none !important;
-}
-
-.container-section {
-  margin: 0 4rem  !important;
-  padding: none !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-flow: row;
-  max-width: 1440px;
-  height: calc(100vh - 10.3rem);
-}
-.secciones{
-  display: flex;
-  flex-flow: row;
-}
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .section {
-  overflow-y: auto;
+    overflow-y: auto;
 }
+
+.home-app {
+
+    max-width: 1300px;
+    display: grid;
+    grid-template-rows: 3.5rem calc(100vh - 5.5rem);
+    gap: 2rem;
+    margin: 0 auto;
+
+}
+
+
 /*# sourceMappingURL=styleApp.css.map */

@@ -1,84 +1,70 @@
 #carouselExampleFade {
-  max-width: 1440px;
+
+  max-width: 1300px;
   height: 30vh;
+  border-radius: 10px;
+
 }
 
 #carouselExampleFade img {
+
   background-repeat: repeat-x;
-  -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
   height: 25vh;
+  border-radius: 10px;
+
 }
 
-.container_empresa {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.container {
+  max-width: 1250px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  gap: 3rem;
+
+}
+
+.companies {
+
+  display: grid;
+  grid-auto-rows: 16rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 2rem;
+
+}
+
+.empresa {
+
+  box-shadow: 1px 1px 5px #ABB2B9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
-.container_empresas {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.empresa .content {
+  background-color: #fff;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.container_empresas h2 {
-  margin: 1em;
-}
-
-.container_empresas div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
+  padding-left: 0.5rem;
+  min-width: 15rem;
+  height: 5rem;
 }
 
-.container_empresas div .empresa a {
-  width: 11em;
-  height: 11em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-decoration: none !important;
+.div-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 11rem;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.links {
+  text-decoration: none;
   color: black;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
 }
-
-.container_empresas div .empresa a img {
-  border-radius: 100%;
-  width: 7em;
-  height: 7em;
-}
-
-/*# sourceMappingURL=styleHome.css.map */

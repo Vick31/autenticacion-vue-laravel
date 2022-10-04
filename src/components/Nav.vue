@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-light" style="padding: 0; margin: 0;">
         <div class="container-fluid">
             <router-link to="/">
-                <img src="/img/logo.png" alt="logo" width="100" height="100" class="d-inline-block align-text-top"
+                <img src="/img/logo.png" alt="logo" width="20" height="20" class="d-inline-block align-text-top"
                     style="cursor:pointer">
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,11 +35,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Button trigger modal -->
-
-
-    <!-- Modal -->
     
 </template>
 
