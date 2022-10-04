@@ -1,7 +1,7 @@
 <template>
 
     <div class="container_empresa">
-        
+
         <div class="mapas">
             <div>
                 <iframe class="maps"
@@ -17,16 +17,16 @@
             <br>
             <h2>Elige tu comida</h2>
             <div>
-                <div class="empresa button" v-for="p in list_hambuguer" @click="insertar(p.name)">
-                    <div class="card">
-                        <router-link to="/select/topings">
+                <router-link to="/select/topings">
+                    <div class="empresa button" v-for="p in list_hambuguer" @click="insertar(p.name)">
+                        <div class="card">
                             <img src="../../img/f.elconfidencial.com_original_cd5_15e_c44_cd515ec44327e3f273fd91e12098d635.jpg"
-                            alt="">
-                        <h4>{{ p.name }}</h4>
-                        <h4>${{ p.price }} COP</h4>
-                        </router-link>
+                                alt="">
+                            <h4>{{ p.name }}</h4>
+                            <h4>${{ p.price }} COP</h4>
+                        </div>
                     </div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -38,14 +38,14 @@
                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div v-for="item in fatura" class="modal-body" >
+                <div v-for="item in fatura" class="modal-body">
                     <div>
                         <small>
                             <b>{{ item.name }}</b>
                         </small>
                         <small>
-                           $ {{item.price}} COP
-                        </small> 
+                            $ {{item.price}} COP
+                        </small>
                     </div>
                 </div>
                 <div class="modal-footer">

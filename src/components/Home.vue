@@ -37,12 +37,12 @@
         <div class="container_empresas">
             <h2>Prueba algo nuevo</h2>
             <div class="container-companies">
-                <div class="empresa button" v-for="companies in articles_list" @click="insertar(companies.name)">
-                    <router-link to="/select">
+                <router-link to="/select">
+                    <div class="empresa button" v-for="companies in articles_list" @click="insertar(companies.name)">
                         <img :src="companies.logo" alt="">
                         <h4>{{ companies.name }}</h4>
-                    </router-link>
-                </div>
+                    </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -79,7 +79,6 @@ export default {
             this.articles_list = response.data.companies;
         },
         insertar(buscar) {
-            localStorage.clear()
 
             let item = this.articles_list.find(pro => pro.name == buscar)
             if (buscar != undefined) {
@@ -90,6 +89,8 @@ export default {
                 };
 
                 localStorage.setItem('company', JSON.stringify(company)); //JSON.stringigy convierte un objeto a string
+
+                console.log(company)
             }
 
         }
