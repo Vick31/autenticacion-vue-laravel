@@ -16,7 +16,6 @@ const routes = [
         components: {
             default: Home,
             navbar: Nav,
-            aside: Aside,
         },
 
     },
