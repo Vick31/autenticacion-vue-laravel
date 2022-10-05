@@ -1,16 +1,17 @@
 <template>
-    <div class="home-app">
+    <div class="body">
 
-        <router-view name="navbar"></router-view>
+        <div class="home-app">
 
-        <div class="section">
+            <router-view name="navbar"></router-view>
 
-            <router-view></router-view>
+            <div class="section">
 
+                <router-view></router-view>
+
+            </div>
         </div>
-
     </div>
-
 
 
     <!-- Modal -->

@@ -1,8 +1,9 @@
 #carouselExampleFade {
 
-  max-width: 1300px;
+  max-width: 900px;
   height: 30vh;
   border-radius: 10px;
+  margin: 0 auto;
 
 }
 
@@ -16,8 +17,10 @@
 
 }
 
+
+
 .container {
-  
+
   max-width: 1250px;
   display: flex;
   flex-direction: column;
@@ -28,7 +31,7 @@
 .companies {
 
   display: grid;
-  grid-auto-rows: 16rem;
+  grid-auto-rows: 18rem;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: 2rem;
 
@@ -36,7 +39,8 @@
 
 .empresa {
 
-  box-shadow: 1px 1px 5px #ABB2B9;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px #ABB2B9;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -52,7 +56,7 @@
   justify-content: space-around;
   padding-left: 0.5rem;
   min-width: 15rem;
-  height: 5rem;
+  height: 7rem;
   border-radius: 15px;
 }
 
@@ -67,6 +71,22 @@
 }
 
 .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   text-decoration: none;
   color: black;
+}
+
+span {
+
+  background-color: #f9a825;
+  padding: .3rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 1px 1px 5px rgba(249, 168, 37, .3);
+}
+
+span:hover {
+  transform: scale(1.03);
 }

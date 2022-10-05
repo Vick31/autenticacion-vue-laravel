@@ -43,27 +43,28 @@
 
             <div class="companies">
 
-                <div class="empresa button" v-for="companies in articles_list" @click="insertar(companies.name)">
+                <div class="empresa button" v-for="companies in articles_list">
 
-                    <router-link class="links" to="/select">
+                    <div class="div-img">
 
-                        <div class="div-img">
-                            <img :src="companies.logo" alt="">
-                        </div>
+                        <img :src="companies.logo" alt="">
 
-                        <div class="content">
-                            <h5>{{ companies.name }}</h5>
-                            <h6> {{companies.phone}} </h6>
-                        </div>
+                    </div>
 
-                    </router-link>
+                    <div class="content">
+
+                        <h5>{{ companies.name }}</h5>
+                        <small> {{companies.phone}} </small>
+
+                        <router-link class="links" to="/select">
+                            <span @click="insertar(companies.name)">Visitar</span>
+                        </router-link>
+                    </div>
+
 
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </template>
 

@@ -10,9 +10,8 @@
             </div>
 
             <div class="description-company">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor voluptate exercitationem incidunt
-                laudantium minima! Porro illum, obcaecati officiis iusto voluptatibus necessitatibus quidem expedita
-                animi deserunt eligendi hic at culpa. Odit?
+                <p> {{company.address}} </p>
+                <p> {{company.phone}} </p>
             </div>
 
             <div class="company">
@@ -27,20 +26,22 @@
 
             <div class="products">
 
-                <div class="empresa button" v-for="p in list_hambuguer" @click="insertar(p.name)">
+                <div class="empresa button" v-for="p in list_hambuguer">
 
-                    <router-link class="links" to="/select/topings">
 
-                        <div class="div-img">
-                            <img src="../../img/comidas/img1.jpg" alt="">
-                        </div>
+                    <div class="div-img">
+                        <img src="../../img/comidas/img1.jpg" alt="">
+                    </div>
 
-                        <div class="content">
-                            <h4>{{ p.name }}</h4>
-                            <h4>${{ p.price }} COP</h4>
-                        </div>
+                    <div class="content">
+                        <h5>{{ p.name }}</h5>
+                        <small>${{ p.price }} COP</small>
 
-                    </router-link>
+                        <router-link class="links" to="/select/topings">
+                            <span @click="insertar(p.name)">Añadir a la bolsa</span>
+                        </router-link>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -98,7 +99,7 @@ export default {
     created() {
 
     },
-    mounted() {
+    async mounted() {
         this.company = JSON.parse(localStorage.getItem('company')); //JSON.parse convierte un string en objeto
         console.log(this.company)
         this.index();

@@ -23,18 +23,35 @@
     display: none;
 }
 
+nav {
+
+    background: #f9a825 !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(249, 168, 37, 0.6);
+
+}
+
+.body {
+
+    width: 100vw;
+    height: 100vh;
+    background: rgb(242, 242, 242);
+}
+
 .section {
+
     overflow-y: auto;
+    padding-top: 1rem;
+
 }
 
 .home-app {
 
     max-width: 1300px;
-    display: grid;
-    grid-template-rows: 3.5rem calc(100vh - 5.5rem);
-    gap: 2rem;
     margin: 0 auto;
-
+    display: grid;
+    grid-template-rows: 3.5rem calc(100vh - 3.5rem)
 }
 
 
