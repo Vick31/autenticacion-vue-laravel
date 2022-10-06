@@ -7,7 +7,10 @@
 
 }
 
-.mapas {
+
+/*    ENCABEZADO   */
+
+.header {
 
   display: flex;
   flex-direction: row;
@@ -16,14 +19,20 @@
 
 }
 
-.mapas .maps {
+.header .maps {
   width: 30rem;
   height: 10rem;
 }
 
-.mapas .description-company {
+.header .description-company {
   max-width: 20rem;
 }
+
+.header .company img {
+  width: 10rem;
+}
+
+/*   CONTENEDOR PRODUCTOS   */
 
 .container-products {
 

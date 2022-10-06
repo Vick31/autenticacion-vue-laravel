@@ -88,18 +88,25 @@ export default {
 
     },
     mounted() {
-        // this.get_token();
+
+        this.get_token();
         this.index();
+
     },
 
     methods: {
-        // async get_token() {
-        //     await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
-        // },
+
+        async get_token() {
+            await axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie")
+        },
+
+        // Lista las comapanias
         async index() {
             let response = await axios.get("http://127.0.0.1:8000/api/companies");
             this.articles_list = response.data.companies;
         },
+
+        // Consulta el nombre de la compania seleccionada
         insertar(buscar) {
 
             let item = this.articles_list.find(pro => pro.name == buscar)
@@ -108,6 +115,9 @@ export default {
                 let company = {
                     'id': item.id,
                     'name': item.name,
+                    'logo': item.logo,
+                    'address': item.address,
+                    'phone': item.phone,
                 };
 
                 localStorage.setItem('company', JSON.stringify(company)); //JSON.stringigy convierte un objeto a string
