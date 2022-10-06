@@ -16,7 +16,7 @@
             </div>
 
             <div class="description-company">
-            
+
                 <p> <b>Dirección:</b> {{company.address}} </p>
                 <p> <b>Contacto:</b> {{company.phone}} </p>
 
