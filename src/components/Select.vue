@@ -129,9 +129,19 @@ export default {
         insertar(buscar) {
 
             let item = this.list_hambuguer.find(pro => pro.name == buscar)
-
             if (buscar != undefined) {
-                localStorage.setItem('type', item.name)
+
+                let selection = {
+
+                    'name': item.name,
+                    'logo': item.logo,
+                    'price': item.price,
+                    
+                };
+
+                localStorage.setItem('selection', JSON.stringify(selection)); //JSON.stringigy convierte un objeto a string
+
+                console.log(selection)
             }
 
         }
