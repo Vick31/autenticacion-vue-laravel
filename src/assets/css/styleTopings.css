@@ -19,3 +19,9 @@
   .header .company img {
     width: 10rem;
   }
+
+  .Container_div {
+    display: flex;
+    flex-flow: row;
+    border: 1px red solid;
+  }

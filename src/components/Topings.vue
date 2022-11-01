@@ -28,12 +28,19 @@
             <h1> {{selection.name}} </h1>
             <h2>${{selection.price}}</h2>
         </div>
+
+
+    </div>
+    <div v-for="p in list_toping">
+
+        <h1>{{p.name}}</h1>
+
     </div>
 
 </template>
 <style scoped>
-    @import "../assets/css/styleTopings.css";
-    </style>
+@import "../assets/css/styleTopings.css";
+</style>
 
 
 <script>
@@ -74,6 +81,7 @@ export default {
         console.log(this.selection)
         this.get_token();
         this.index();
+
     },
 
     methods: {
